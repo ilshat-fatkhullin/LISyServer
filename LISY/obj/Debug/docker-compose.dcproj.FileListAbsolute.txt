@@ -1,0 +1,1 @@
+C:\Repositories\LISyServer\LISY\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

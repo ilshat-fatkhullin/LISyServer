@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  lisy:
+    image: lisy
+    build:
+      context: .
+      dockerfile: LISY\Dockerfile

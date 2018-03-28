@@ -1,0 +1,15 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  lisy:
+    build:
+      context: C:\Repositories\LISyServer\LISY
+      dockerfile: LISY\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: lisy
+    ports:
+    - 80/tcp
+version: '3.0'
