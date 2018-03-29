@@ -1,15 +1,27 @@
-﻿using System;
+﻿using Dapper;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace LISY.Helpers
 {
     public static class DatabaseHelper
     {
-        public static string GetConnectionString()
+        const string CONNECTION_STRING = "Server=lisy.database.windows.net;Database=LISy;User Id=librarian;Password=nairarbil0#;";
+
+        public static void Execute(string command, object obj)
         {
-            return "Server=lisy.database.windows.net;Database=LISy;User Id=librarian;Password=nairarbil0#;";
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(CONNECTION_STRING))
+            {
+                connection.Execute(command, obj);
+            }
+        }
+
+        public static IEnumerable<T> Query<T>(string command, object obj)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(CONNECTION_STRING))
+            {
+                return connection.Query<T>(command, obj);
+            }
         }
     }
 }
