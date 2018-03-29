@@ -185,7 +185,7 @@ namespace LISY.DataManagers
             return DatabaseHelper.Query<int>("dbo.spCopies_GetNumberOfCopies", null).FirstOrDefault();
         }
 
-        public static void AddCopy(int number, Copy copy)
+        public static void AddCopies(int number, Copy copy)
         {
             DatabaseHelper.Execute("dbo.spCopies_AddCopy @N, @BookId, @Room, @Level", new { N = number, BookId = copy.BookId, Room = copy.Room, Level = copy.Level });
         }
@@ -225,7 +225,7 @@ namespace LISY.DataManagers
             return DatabaseHelper.Query<Journal>("dbo.spJournals_GetAll", null).ToArray();
         }
 
-        public static Article[] GetAllJournalArticlesList()
+        public static Article[] GetAllArticlesList()
         {            
             return DatabaseHelper.Query<Article>("dbo.spJournalArticles_GetAll", null).ToArray();            
         }

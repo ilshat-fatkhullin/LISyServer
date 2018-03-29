@@ -7,7 +7,7 @@ namespace LISY.Entities.Documents
 {
     public class Article
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         public string Title { get; set; }
 
