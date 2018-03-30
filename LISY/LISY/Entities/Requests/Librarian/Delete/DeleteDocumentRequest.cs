@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LISY.Entities.Documents
+namespace LISY.Entities.Requests
 {
-    public class Article: Document
+    public class DeleteDocumentRequest
     {
-        
+        public int Id { get; set; }
     }
 }

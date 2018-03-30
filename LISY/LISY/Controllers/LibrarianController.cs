@@ -1,6 +1,10 @@
 ﻿using LISY.DataManagers;
 using LISY.Entities.Documents;
+using LISY.Entities.Requests;
+using LISY.Entities.Requests.Librarian.Post;
+using LISY.Entities.Requests.Librarian.Put;
 using LISY.Entities.Users;
+using LISY.Entities.Users.Patrons;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LISY.Controllers
@@ -11,114 +15,156 @@ namespace LISY.Controllers
     {
         [Route("add_article")]
         [HttpPost]
-        public long AddArticle(Article article)
+        public long AddArticle([FromBody]Article article)
         {
             return DocumentsDataManager.AddArticle(article);
         }
 
-        [Route("edit_article")]
-        [HttpPut]
-        public void EditArticle(Article article)
-        {
-            DocumentsDataManager.EditArticle(article);
-        }
-
         [Route("add_av_material")]
         [HttpPost]
-        public long AddAVMaterial(AVMaterial avMaterial)
+        public long AddAVMaterial([FromBody]AVMaterial avMaterial)
         {
             return DocumentsDataManager.AddAVMaterial(avMaterial);
         }
 
-        [Route("edit_av_material")]
-        [HttpPut]
-        public void EditAVMaterial(AVMaterial avMaterial)
-        {
-            DocumentsDataManager.EditAVMaterial(avMaterial);
-        }
-
         [Route("add_book")]
         [HttpPost]
-        public long AddBook(Book book)
+        public long AddBook([FromBody]Book book)
         {
             return DocumentsDataManager.AddBook(book);
         }
 
-        [Route("edit_book")]
-        [HttpPut]
-        public void EditBook(Book book)
-        {
-            DocumentsDataManager.EditBook(book);
-        }
-
         [Route("add_inner_material")]
         [HttpPost]
-        public long AddInnerMaterial(InnerMaterial innerMaterial)
+        public long AddInnerMaterial([FromBody]InnerMaterial innerMaterial)
         {
             return DocumentsDataManager.AddInnerMaterial(innerMaterial);
         }
 
-        [Route("edit_inner_material")]
-        [HttpPut]
-        public void EditInnerMaterial(InnerMaterial innerMaterial)
-        {
-            DocumentsDataManager.EditInnerMaterial(innerMaterial);
-        }
-
         [Route("add_journal")]
         [HttpPost]
-        public long AddJournal(Journal journal)
+        public long AddJournal([FromBody]Journal journal)
         {
             return DocumentsDataManager.AddJournal(journal);
         }
 
+        [Route("edit_article")]
+        [HttpPut]
+        public void EditArticle([FromBody]Article article)
+        {
+            DocumentsDataManager.EditArticle(article);
+        }
+
+        [Route("edit_av_material")]
+        [HttpPut]
+        public void EditAVMaterial([FromBody]AVMaterial avMaterial)
+        {
+            DocumentsDataManager.EditAVMaterial(avMaterial);
+        }        
+
+        [Route("edit_book")]
+        [HttpPut]
+        public void EditBook([FromBody]Book book)
+        {
+            DocumentsDataManager.EditBook(book);
+        }        
+
+        [Route("edit_inner_material")]
+        [HttpPut]
+        public void EditInnerMaterial([FromBody]InnerMaterial innerMaterial)
+        {
+            DocumentsDataManager.EditInnerMaterial(innerMaterial);
+        }        
+
         [Route("edit_journal")]
         [HttpPost]
-        public void EditJournal(Journal journal)
+        public void EditJournal([FromBody]Journal journal)
         {
             DocumentsDataManager.EditJournal(journal);
         }
 
         [Route("delete_document")]
         [HttpDelete]
-        public void DeleteDocument(long id)
+        public void DeleteDocument([FromBody]DeleteDocumentRequest request)
         {
-            DocumentsDataManager.DeleteDocument(id);
+            DocumentsDataManager.DeleteDocument(request.Id);
         }
 
         [Route("return_document")]
         [HttpPut]
-        public void ReturnDocument(long documentId, long userId)
+        public void ReturnDocument([FromBody]ReturnDocumentRequest request)
         {
-            DocumentsDataManager.ReturnDocument(documentId, userId);
+            DocumentsDataManager.ReturnDocument(request.DocumentId, request.UserId);
         }
 
-        [Route("add_user")]
-        [HttpPost]
-        public bool AddUser(User user, string login, string password)
+        [Route("add_librarian")]        
+        [HttpPost]        
+        public bool AddLibrarian([FromBody]AddLibrarianRequest request)
         {
-            return UsersDataManager.AddUser(user, login, password);
+            return UsersDataManager.AddLibrarian(request.Librarian, request.Login, request.Password);
+        }
+
+        [Route("add_faculty")]
+        [HttpPost]
+        public bool AddFaculty([FromBody]AddFacultyRequest request)
+        {
+            return UsersDataManager.AddFaculty(request.Faculty, request.Login, request.Password);
+        }
+
+        [Route("add_student")]
+        [HttpPost]
+        public bool AddStudent([FromBody]AddStudentRequest request)
+        {
+            return UsersDataManager.AddStudent(request.Student, request.Login, request.Password);
+        }
+
+        [Route("add_guest")]
+        [HttpPost]
+        public bool AddGuest([FromBody]AddGuestRequest request)
+        {
+            return UsersDataManager.AddGuest(request.Guest, request.Login, request.Password);
+        }
+
+        [Route("edit_librarian")]
+        [HttpPut]
+        public void EditLibrarian([FromBody]Librarian librarian)
+        {
+            UsersDataManager.EditLibrarian(librarian);
+        }
+
+        [Route("edit_faculty")]
+        [HttpPut]
+        public void EditFaculty([FromBody]Faculty faculty)
+        {
+            UsersDataManager.EditFaculty(faculty);
+        }
+
+        [Route("edit_student")]
+        [HttpPut]
+        public void EditStudent([FromBody]Student student)
+        {
+            UsersDataManager.EditStudent(student);
+        }
+
+        [Route("edit_guest")]
+        [HttpPut]
+        public void EditGuest([FromBody]Guest guest)
+        {
+            UsersDataManager.EditGuest(guest);
         }
 
         [Route("delete_user")]
         [HttpDelete]
-        public void DeleteUser(User user)
+        public void DeleteUser([FromBody]DeleteUserRequest request)
         {
-            UsersDataManager.DeleteUser(user);
-        }
-
-        [Route("edit_user")]
-        [HttpPut]
-        public void EditUser(User newUser)
-        {
-            UsersDataManager.EditUser(newUser);
-        }
+            UsersDataManager.DeleteUser(request.UserId);
+        }        
 
         [Route("add_copies")]
         [HttpPost]
-        public void AddCopies(int n, Copy copy)
+        public void AddCopies([FromBody]AddCopiesRequest request)
         {
-            DocumentsDataManager.AddCopies(n, copy);
+            DocumentsDataManager.AddCopies(request.N, request.Copy);
         }
 
         [Route("delete_copies")]

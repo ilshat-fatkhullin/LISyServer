@@ -1,5 +1,5 @@
-﻿using LISY.Entities.Documents;
-using LISY.Entities.Users;
+﻿using LISY.Entities.Users;
+using LISY.Entities.Users.Patrons;
 using LISY.Helpers;
 using System;
 using System.Linq;
@@ -8,19 +8,18 @@ namespace LISY.DataManagers
 {
     public static class UsersDataManager
     {
-        public static bool AddUser(User user, string login, string password)
+        private static bool AddUser(User user, string login, string password)
         {
-            if (user == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            var output = DatabaseHelper.Query<bool>("dbo.spUsers_IsUserInTable @FirstName, @SecondName, @Phone",
-                new { FirstName = user.FirstName, SecondName = user.SecondName, Phone = user.Phone }).ToList();
-            if (!output[0])
+            bool output = DatabaseHelper.Query<bool>("dbo.spUsers_IsUserInTable @FirstName, @SecondName, @Phone",
+                new
+                {
+                    FirstName = user.FirstName,
+                    SecondName = user.SecondName,
+                    Phone = user.Phone
+                }).ToList().FirstOrDefault();
+            if (!output)
             {
                 long cardNumber = CredentialsDataManager.AddUserCredentials(login, password);
-
                 user.CardNumber = cardNumber;
                 DatabaseHelper.Execute("dbo.spUsers_AddUser @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Type",
                         new
@@ -38,21 +37,29 @@ namespace LISY.DataManagers
             {
                 return false;
             }
-        }        
-
-        public static void DeleteUser(User user)
-        {
-            if (user == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            CredentialsDataManager.DeleteUserCredentials(user.CardNumber);
-
-            DatabaseHelper.Execute("dbo.spUsers_DeleteUser @CardNumber", user);
         }
 
-        public static void EditUser(User newUser)
+        public static bool AddLibrarian(Librarian librarian, string login, string password)
+        {
+            return AddUser(librarian, login, password);
+        }
+
+        public static bool AddFaculty(Faculty faculty, string login, string password)
+        {
+            return AddUser(faculty, login, password);
+        }
+
+        public static bool AddStudent(Student student, string login, string password)
+        {
+            return AddUser(student, login, password);
+        }
+
+        public static bool AddGuest(Guest guest, string login, string password)
+        {
+            return AddUser(guest, login, password);
+        }
+
+        private static void EditUser(User newUser)
         {
             if (newUser == null)
             {
@@ -69,6 +76,32 @@ namespace LISY.DataManagers
                         Address = newUser.Address
                     });
         }
+
+        public static void EditLibrarian(Librarian librarian)
+        {
+            EditUser(librarian);
+        }
+
+        public static void EditFaculty(Faculty faculty)
+        {
+            EditUser(faculty);
+        }
+
+        public static void EditStudent(Student student)
+        {
+            EditStudent(student);
+        }
+
+        public static void EditGuest(Guest guest)
+        {
+            EditUser(guest);
+        }
+
+        public static void DeleteUser(long userId)
+        {            
+            CredentialsDataManager.DeleteUserCredentials(userId);
+            DatabaseHelper.Execute("dbo.spUsers_DeleteUser @CardNumber", CredentialsDataManager.GetUserByID(userId));
+        }        
 
         public static int GetNumberOfUsers()
         {

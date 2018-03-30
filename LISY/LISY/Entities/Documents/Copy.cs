@@ -7,11 +7,11 @@ namespace LISY.Entities.Documents
 {
     public class Copy
     {
-        public int CopyId { get; set; }
+        public long Id { get; set; }
 
-        public int BookId { get; set; }
+        public long DocumentId { get; set; }
 
-        public int UserId { get; set; }
+        public long PatronId { get; set; }
 
         public bool Checked { get; set; }
 

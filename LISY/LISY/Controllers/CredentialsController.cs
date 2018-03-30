@@ -1,4 +1,6 @@
 ﻿using LISY.DataManagers;
+using LISY.Entities.Requests;
+using LISY.Entities.Requests.Librarian.Put;
 using LISY.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,25 +24,11 @@ namespace LISY.Controllers
             return CredentialsDataManager.GetUserType(userId);
         }
 
-        [Route("add_user_credentials")]
-        [HttpPost]
-        public long AddUserCredentials(string login, string password)
-        {
-            return CredentialsDataManager.AddUserCredentials(login, password);
-        }
-
-        [Route("delete_user_credentials")]
-        [HttpDelete]
-        public void DeleteUserCredentials(long userId)
-        {
-            CredentialsDataManager.DeleteUserCredentials(userId);
-        }
-
         [Route("edit_user_credentials")]
         [HttpPut]
-        public void EditUserCredentials(long userId, string password)
+        public void EditUserCredentials([FromBody]EditUserCredentialsRequest request)
         {
-            CredentialsDataManager.EditUserCredentials(userId, password);
+            CredentialsDataManager.EditUserCredentials(request.UserId, request.Password);
         }
 
         [Route("get_user_by_id")]

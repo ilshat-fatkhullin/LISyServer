@@ -64,11 +64,6 @@ namespace LISY.DataManagers
             return GetDocumentId(article);
         }
 
-        public static void DeleteDocument(long id)
-        {
-            DatabaseHelper.Execute("dbo.spDocuments_DeleteDocument @Id", new { Id = id });
-        }
-
         public static void EditAVMaterial(AVMaterial avMaterial)
         {
             if (avMaterial == null)
@@ -114,6 +109,11 @@ namespace LISY.DataManagers
                         article);
         }
 
+        public static void DeleteDocument(long id)
+        {
+            DatabaseHelper.Execute("dbo.spDocuments_DeleteDocument @Id", new { Id = id });
+        }
+
         public static void CheckOutDocument(long documentId, long userId)
         {
             if (!IsAvailable(documentId, userId))
@@ -151,8 +151,7 @@ namespace LISY.DataManagers
 
         public static bool IsAvailable(long documentID, long userID)
         {
-            var output = DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentID, UserId = userID }).ToList();
-            return (output.Count != 0);
+            return DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentID, UserId = userID }).ToList().Count != 0;            
         }
 
         public static string GetType(long documentId)
@@ -162,7 +161,7 @@ namespace LISY.DataManagers
 
         public static int GetCopyId(Copy copy)
         {
-            var output = DatabaseHelper.Query<int>("dbo.spCopies_GetCopyId @DocId, @Room, @Level", new { DocId = copy.BookId, copy.Room, copy.Level }).ToList();
+            var output = DatabaseHelper.Query<int>("dbo.spCopies_GetCopyId @DocId, @Room, @Level", new { DocId = copy.DocumentId, copy.Room, copy.Level }).ToList();
             if (output.Count() > 0)
             {
                 return output[0];
@@ -175,14 +174,14 @@ namespace LISY.DataManagers
 
         public static void DeleteCopyByDocumentId(Copy copy)
         {
-            DatabaseHelper.Execute("dbo.spCopies_DeleteCopyByDocumentIdRoomLevel @DocId, @Room, @Level", new { DocId = copy.BookId, copy.Room, copy.Level });
+            DatabaseHelper.Execute("dbo.spCopies_DeleteCopyByDocumentIdRoomLevel @DocId, @Room, @Level", new { DocId = copy.DocumentId, copy.Room, copy.Level });
         }
 
         public static void DeleteCopy(Copy copy)
         {
             if (copy == null)
                 throw new ArgumentNullException();
-            DatabaseHelper.Execute("dbo.spCopies_DeleteCopy @CopyId", new { CopyId = copy.CopyId });
+            DatabaseHelper.Execute("dbo.spCopies_DeleteCopy @CopyId", new { CopyId = copy.Id });
         }
 
         public static int GetNumberOfDocuments()
@@ -197,7 +196,7 @@ namespace LISY.DataManagers
 
         public static void AddCopies(int number, Copy copy)
         {
-            DatabaseHelper.Execute("dbo.spCopies_AddCopy @N, @BookId, @Room, @Level", new { N = number, BookId = copy.BookId, Room = copy.Room, Level = copy.Level });
+            DatabaseHelper.Execute("dbo.spCopies_AddCopy @N, @BookId, @Room, @Level", new { N = number, BookId = copy.DocumentId, Room = copy.Room, Level = copy.Level });
         }
 
         public static Copy[] GetAllCopiesList()

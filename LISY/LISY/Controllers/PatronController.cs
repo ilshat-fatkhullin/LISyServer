@@ -1,4 +1,5 @@
 ﻿using LISY.DataManagers;
+using LISY.Entities.Requests.Patron.Put;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LISY.Controllers
@@ -9,9 +10,9 @@ namespace LISY.Controllers
     {
         [Route("check_out")]
         [HttpPut]
-        public void CheckOutDocument(long documentId, long userId)
+        public void CheckOutDocument([FromBody]CheckOutDocumentRequest request)
         {
-            DocumentsDataManager.CheckOutDocument(documentId, userId);
+            DocumentsDataManager.CheckOutDocument(request.DocumentId, request.UserId);
         }
     }
 }
