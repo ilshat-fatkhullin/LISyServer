@@ -54,7 +54,7 @@ namespace LISY.DataManagers
                         article);
         }
 
-        public static void DeleteDocument(int id)
+        public static void DeleteDocument(long id)
         {
             DatabaseHelper.Execute("dbo.spDocuments_DeleteDocument @Id", new { Id = id });
         }
@@ -228,6 +228,12 @@ namespace LISY.DataManagers
         public static Article[] GetAllArticlesList()
         {            
             return DatabaseHelper.Query<Article>("dbo.spJournalArticles_GetAll", null).ToArray();            
+        }
+
+        public static long GetDocumentId(Document document)
+        {
+            return DatabaseHelper.Query<Document>("dbo.spDocuments_GetDocumentId @Title, @Authors, @KeyWords",
+                new { Title = document.Title, Authors = document.Authors, KeyWords = document.KeyWords }).FirstOrDefault().Id;
         }
     }
 }

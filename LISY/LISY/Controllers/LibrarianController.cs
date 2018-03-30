@@ -1,5 +1,6 @@
 ﻿using LISY.DataManagers;
 using LISY.Entities.Documents;
+using LISY.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LISY.Controllers
@@ -80,12 +81,12 @@ namespace LISY.Controllers
 
         [Route("delete_document")]
         [HttpDelete]
-        public static void DeleteDocument(int id)
+        public static void DeleteDocument(long id)
         {
             DocumentsDataManager.DeleteDocument(id);
         }
 
-        [Route("delete_document")]
+        [Route("return_document")]
         [HttpPost]
         public static void ReturnDocument(long documentId, long userId)
         {
@@ -93,7 +94,7 @@ namespace LISY.Controllers
         }
 
         [Route("add_user")]
-        [HttpPost]
+        [HttpGet]
         public static bool AddUser(User user, string login, string password)
         {
             return UsersDataManager.AddUser(user, login, password);
@@ -231,5 +232,19 @@ namespace LISY.Controllers
         {
             return DocumentsDataManager.GetCheckedByUserCopiesList(userId);
         }
+
+        [Route("get_document_id")]
+        [HttpGet]
+        public static long GetDocumentId(Document document)
+        {
+            return DocumentsDataManager.GetDocumentId(document);
+        }
+
+        [Route("is_available")]
+        [HttpGet]
+        public static bool IsAvailable(long documentId, long patronId)
+        {
+            return DocumentsDataManager.IsAvailable(documentId, patronId);
+        }        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using LISY.Entities.Documents;
+using LISY.Entities.Users;
 using LISY.Helpers;
 using System;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace LISY.DataManagers
             {
                 return false;
             }
-        }
+        }        
 
         public static void DeleteUser(User user)
         {

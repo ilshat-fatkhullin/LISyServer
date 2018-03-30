@@ -1,4 +1,5 @@
 ﻿using LISY.Entities.Documents;
+using LISY.Entities.Users;
 using LISY.Helpers;
 using System;
 using System.Linq;

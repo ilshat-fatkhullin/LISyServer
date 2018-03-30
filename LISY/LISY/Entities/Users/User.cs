@@ -1,4 +1,4 @@
-﻿namespace LISY.Entities.Documents
+﻿namespace LISY.Entities.Users
 {
     public class User
     {
