@@ -12,7 +12,7 @@ namespace LISY.Controllers
     [Route("api/Database")]
     public class DatabaseController : Controller
     {
-        [HttpGet]
+        [HttpDelete]
         [Route("delete")]
         public void Delete()
         {

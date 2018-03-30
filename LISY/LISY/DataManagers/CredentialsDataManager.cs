@@ -1,5 +1,4 @@
-﻿using LISY.Entities.Documents;
-using LISY.Entities.Users;
+﻿using LISY.Entities.Users;
 using LISY.Helpers;
 using System;
 using System.Linq;
@@ -40,7 +39,7 @@ namespace LISY.DataManagers
             DatabaseHelper.Execute("dbo.spCredentials_DeleteCredential @CardNumber", new { CardNumber = userId });
         }
 
-        public static void ModifyUserCredentials(long userId, string password)
+        public static void EditUserCredentials(long userId, string password)
         {
             DatabaseHelper.Execute("dbo.spCredentials_ModifyCredential @CardNumber, @Password",
                     new { CardNumber = userId, Password = password });

@@ -9,7 +9,7 @@ namespace LISY.Controllers
     {
         [Route("check_out")]
         [HttpPut]
-        public static void CheckOutDocument(long documentId, long userId)
+        public void CheckOutDocument(long documentId, long userId)
         {
             DocumentsDataManager.CheckOutDocument(documentId, userId);
         }

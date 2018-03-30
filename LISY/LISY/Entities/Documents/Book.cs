@@ -5,14 +5,8 @@ using System.Threading.Tasks;
 
 namespace LISY.Entities.Documents
 {
-    public class Book
+    public class Book: Document
     {
-        public long Id { get; set; }
-
-        public string Title { get; set; }
-
-        public string Authors { get; set; }
-
         public string Publisher { get; set; }
 
         public string Edition { get; set; }
@@ -21,10 +15,6 @@ namespace LISY.Entities.Documents
 
         public int Price { get; set; }
 
-        public bool IsBestseller { get; set; }
-
-        public string KeyWords { get; set; }
-
-        public string CoverURL { get; set; }
+        public bool IsBestseller { get; set; }        
     }
 }

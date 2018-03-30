@@ -9,49 +9,59 @@ namespace LISY.DataManagers
 {
     public static class DocumentsDataManager
     {
-        public static void AddAVMaterial(AVMaterial avMaterial)
+        public static long AddAVMaterial(AVMaterial avMaterial)
         {
             if (avMaterial == null)
                 throw new ArgumentNullException();
 
             DatabaseHelper.Execute("dbo.spAudioVideos_AddAV @Title, @Authors, @KeyWords, @CoverURL, @Price",
                         avMaterial);
+
+            return GetDocumentId(avMaterial);
         }
 
-        public static void AddBook(Book book)
+        public static long AddBook(Book book)
         {
             if (book == null)
                 throw new ArgumentNullException();
 
             DatabaseHelper.Execute("dbo.spBooks_AddBook @Title, @Authors, @Publisher, @Edition, @Year, @IsBestseller, @KeyWords, @CoverURL, @Price",
                         book);
+
+            return GetDocumentId(book);
         }
 
-        public static void AddInnerMaterial(InnerMaterial innerMaterial)
+        public static long AddInnerMaterial(InnerMaterial innerMaterial)
         {
             if (innerMaterial == null)
                 throw new ArgumentNullException();
 
             DatabaseHelper.Execute("dbo.spInnerMaterials_AddInnerMaterial @Title, @Authors, @Type, @Room, @Level, @KeyWords, @CoverURL",
                         innerMaterial);
+
+            return GetDocumentId(innerMaterial);
         }
 
-        public static void AddJournal(Journal journal)
+        public static long AddJournal(Journal journal)
         {
             if (journal == null)
                 throw new ArgumentNullException();
 
             DatabaseHelper.Execute("dbo.spJournals_AddJournal @Title, @Authors, @Publisher, @Issue, @PublicationDate, @KeyWords, @CoverURL, @Price",
                         journal);
+
+            return GetDocumentId(journal);
         }
 
-        public static void AddArticle(Article article)
+        public static long AddArticle(Article article)
         {
             if (article == null)
                 throw new ArgumentNullException();
 
             DatabaseHelper.Execute("dbo.spJournalArticles_AddJournalArticle @Title, @Authors, @JournalId, @KeyWords, @CoverURL",
                         article);
+
+            return GetDocumentId(article);
         }
 
         public static void DeleteDocument(long id)

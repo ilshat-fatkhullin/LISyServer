@@ -11,238 +11,231 @@ namespace LISY.Controllers
     {
         [Route("add_article")]
         [HttpPost]
-        public static void AddArticle(Article article)
+        public long AddArticle(Article article)
         {
-            DocumentsDataManager.AddArticle(article);
+            return DocumentsDataManager.AddArticle(article);
         }
 
         [Route("edit_article")]
         [HttpPut]
-        public static void EditArticle(Article article)
+        public void EditArticle(Article article)
         {
             DocumentsDataManager.EditArticle(article);
         }
 
         [Route("add_av_material")]
         [HttpPost]
-        public static void AddAVMaterial(AVMaterial avMaterial)
+        public long AddAVMaterial(AVMaterial avMaterial)
         {
-            DocumentsDataManager.AddAVMaterial(avMaterial);
+            return DocumentsDataManager.AddAVMaterial(avMaterial);
         }
 
         [Route("edit_av_material")]
         [HttpPut]
-        public static void EditAVMaterial(AVMaterial avMaterial)
+        public void EditAVMaterial(AVMaterial avMaterial)
         {
             DocumentsDataManager.EditAVMaterial(avMaterial);
         }
 
         [Route("add_book")]
         [HttpPost]
-        public static void AddBook(Book book)
+        public long AddBook(Book book)
         {
-            DocumentsDataManager.AddBook(book);
+            return DocumentsDataManager.AddBook(book);
         }
 
         [Route("edit_book")]
         [HttpPut]
-        public static void EditBook(Book book)
+        public void EditBook(Book book)
         {
             DocumentsDataManager.EditBook(book);
         }
 
         [Route("add_inner_material")]
         [HttpPost]
-        public static void AddInnerMaterial(InnerMaterial innerMaterial)
+        public long AddInnerMaterial(InnerMaterial innerMaterial)
         {
-            DocumentsDataManager.AddInnerMaterial(innerMaterial);
+            return DocumentsDataManager.AddInnerMaterial(innerMaterial);
         }
 
         [Route("edit_inner_material")]
         [HttpPut]
-        public static void EditInnerMaterial(InnerMaterial innerMaterial)
+        public void EditInnerMaterial(InnerMaterial innerMaterial)
         {
             DocumentsDataManager.EditInnerMaterial(innerMaterial);
         }
 
         [Route("add_journal")]
         [HttpPost]
-        public static void AddJournal(Journal journal)
+        public long AddJournal(Journal journal)
         {
-            DocumentsDataManager.AddJournal(journal);
+            return DocumentsDataManager.AddJournal(journal);
         }
 
         [Route("edit_journal")]
         [HttpPost]
-        public static void EditJournal(Journal journal)
+        public void EditJournal(Journal journal)
         {
             DocumentsDataManager.EditJournal(journal);
         }
 
         [Route("delete_document")]
         [HttpDelete]
-        public static void DeleteDocument(long id)
+        public void DeleteDocument(long id)
         {
             DocumentsDataManager.DeleteDocument(id);
         }
 
         [Route("return_document")]
-        [HttpPost]
-        public static void ReturnDocument(long documentId, long userId)
+        [HttpPut]
+        public void ReturnDocument(long documentId, long userId)
         {
             DocumentsDataManager.ReturnDocument(documentId, userId);
         }
 
         [Route("add_user")]
-        [HttpGet]
-        public static bool AddUser(User user, string login, string password)
+        [HttpPost]
+        public bool AddUser(User user, string login, string password)
         {
             return UsersDataManager.AddUser(user, login, password);
         }
 
         [Route("delete_user")]
         [HttpDelete]
-        public static void DeleteUser(User user)
+        public void DeleteUser(User user)
         {
             UsersDataManager.DeleteUser(user);
         }
 
         [Route("edit_user")]
         [HttpPut]
-        public static void EditUser(User newUser)
+        public void EditUser(User newUser)
         {
             UsersDataManager.EditUser(newUser);
         }
 
         [Route("add_copies")]
         [HttpPost]
-        public static void AddCopies(int n, Copy copy)
+        public void AddCopies(int n, Copy copy)
         {
             DocumentsDataManager.AddCopies(n, copy);
         }
 
         [Route("delete_copies")]
         [HttpDelete]
-        public static void DeleteCopy(Copy copy)
+        public void DeleteCopy(Copy copy)
         {
             DocumentsDataManager.DeleteCopy(copy);
         }
 
         [Route("delete_copy_by_id")]
         [HttpDelete]
-        public static void DeleteCopyByDocId(Copy copy)
+        public void DeleteCopyByDocId(Copy copy)
         {
             DocumentsDataManager.DeleteCopyByDocumentId(copy);
         }
 
         [Route("get_all_copies")]
         [HttpGet]
-        public static Copy[] GetAllCopiesList()
+        public Copy[] GetAllCopiesList()
         {
             return DocumentsDataManager.GetAllCopiesList();
         }
 
         [Route("clear_all")]
         [HttpDelete]
-        public static void ClearAll()
+        public void ClearAll()
         {
             DatabaseDataManager.ClearAll();
         }
 
         [Route("get_checked_copies")]
         [HttpGet]
-        public static Copy[] GetCheckedCopiesList()
+        public Copy[] GetCheckedCopiesList()
         {
             return DocumentsDataManager.GetCheckedCopiesList();
         }
 
         [Route("get_all_users")]
         [HttpGet]
-        public static User[] GetAllUsersList()
+        public User[] GetAllUsersList()
         {
             return UsersDataManager.GetUsersList();
         }
 
         [Route("get_all_av_materials")]
         [HttpGet]
-        public static AVMaterial[] GetAllAVMaterialsList()
+        public AVMaterial[] GetAllAVMaterialsList()
         {
             return DocumentsDataManager.GetAllAVMaterialsList();
         }
 
         [Route("get_all_books")]
         [HttpGet]
-        public static Book[] GetAllBooksList()
+        public Book[] GetAllBooksList()
         {
             return DocumentsDataManager.GetAllBooksList();
         }
 
         [Route("get_documents_number")]
         [HttpGet]
-        public static int GetNumberOfDocuments()
+        public int GetNumberOfDocuments()
         {
             return DocumentsDataManager.GetNumberOfDocuments();
         }
 
         [Route("get_users_number")]
         [HttpGet]
-        public static int GetNumberOfUsers()
+        public int GetNumberOfUsers()
         {
             return UsersDataManager.GetNumberOfUsers();
         }
 
         [Route("get_copies_number")]
         [HttpGet]
-        public static int GetNumberOfCopies()
+        public int GetNumberOfCopies()
         {
             return DocumentsDataManager.GetNumberOfCopies();
         }
 
         [Route("get_all_inner_materials")]
         [HttpGet]
-        public static InnerMaterial[] GetAllInnerMaterialsList()
+        public InnerMaterial[] GetAllInnerMaterialsList()
         {
             return DocumentsDataManager.GetAllInnerMaterialsList();
         }
 
         [Route("get_all_journals")]
         [HttpGet]
-        public static Journal[] GetAllJournalsList()
+        public Journal[] GetAllJournalsList()
         {
             return DocumentsDataManager.GetAllJournalsList();
         }
 
         [Route("get_all_articles")]
         [HttpGet]
-        public static Article[] GetAllArticlesList()
+        public Article[] GetAllArticlesList()
         {
             return DocumentsDataManager.GetAllArticlesList();
         }
 
         [Route("get_user")]
         [HttpGet]
-        public static User GetUserById(long userId)
+        public User GetUserById(long userId)
         {
             return CredentialsDataManager.GetUserByID(userId);
         }
 
         [Route("get_copies_checked_by_user")]
         [HttpGet]
-        public static Copy[] GetCheckedByUserCopiesList(long userId)
+        public Copy[] GetCheckedByUserCopiesList(long userId)
         {
             return DocumentsDataManager.GetCheckedByUserCopiesList(userId);
         }
 
-        [Route("get_document_id")]
-        [HttpGet]
-        public static long GetDocumentId(Document document)
-        {
-            return DocumentsDataManager.GetDocumentId(document);
-        }
-
         [Route("is_available")]
         [HttpGet]
-        public static bool IsAvailable(long documentId, long patronId)
+        public bool IsAvailable(long documentId, long patronId)
         {
             return DocumentsDataManager.IsAvailable(documentId, patronId);
         }        
