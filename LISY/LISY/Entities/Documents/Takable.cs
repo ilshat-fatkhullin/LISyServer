@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LISY.Entities.Users.Patrons;
+using System;
 
-namespace LISY.Helpers
+namespace LISY.Entities.Documents
 {
-    public static class DocumentsHelper
+    public class Takable: Document
     {
         public const int BASIC_RETURN_TIME = 14;
 
         public const int GUEST_RETURN_TIME = 7;
 
-        public static string EvaluateReturnDate(string patronType)
+        public int Price { get; set; }
+
+        public virtual string EvaluateReturnDate(string patronType)
         {
             DateTime date = DateTime.Today;
-            if (patronType.Equals("Guest"))
+            if (patronType.Equals(Guest.TYPE))
             {
                 date = date.AddDays(GUEST_RETURN_TIME);
             }

@@ -1,6 +1,6 @@
 ﻿namespace LISY.Entities.Documents
 {
-    public class Journal: Document
+    public class Journal: Takable
     {
         public string Publisher { get; set; }
 

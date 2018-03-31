@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace LISY.Entities.Documents
 {
-    public class AVMaterial: Document
+    public class AVMaterial: Takable
     {
         
     }

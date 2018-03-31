@@ -169,17 +169,10 @@ namespace LISY.Controllers
 
         [Route("delete_copies")]
         [HttpDelete]
-        public void DeleteCopy(Copy copy)
+        public void DeleteCopy([FromBody]DeleteDocumentRequest request)
         {
-            DocumentsDataManager.DeleteCopy(copy);
-        }
-
-        [Route("delete_copy_by_id")]
-        [HttpDelete]
-        public void DeleteCopyByDocId(Copy copy)
-        {
-            DocumentsDataManager.DeleteCopyByDocumentId(copy);
-        }
+            DocumentsDataManager.DeleteCopy(request.Id);
+        }        
 
         [Route("get_all_copies")]
         [HttpGet]

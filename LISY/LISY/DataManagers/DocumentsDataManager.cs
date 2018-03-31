@@ -120,8 +120,9 @@ namespace LISY.DataManagers
                 return;
 
             string documentType = GetType(documentId);
-            string patronType = DatabaseHelper.Query<string>("dbo.spUsers_GetType @UserId", new { UserId = userId }).FirstOrDefault();
-            string date = DocumentsHelper.EvaluateReturnDate(patronType);
+            string patronType = DatabaseHelper.Query<string>("dbo.spUsers_GetType @UserId", new { UserId = userId }).FirstOrDefault();            
+
+            Takable takable = null;
 
             if (documentType == "Inner")
             {
@@ -129,19 +130,22 @@ namespace LISY.DataManagers
             }
             else if (documentType == "Book")
             {
-                Book[] documents = DatabaseHelper.Query<Book>("dbo.spBooks_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray();
+                takable = DatabaseHelper.Query<Book>("dbo.spBooks_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
             }
             else if (documentType == "AV")
             {
-                AVMaterial[] documents = DatabaseHelper.Query<AVMaterial>("dbo.spAudioVideos_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray();
+                takable = DatabaseHelper.Query<AVMaterial>("dbo.spAudioVideos_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
             }
             else if (documentType == "Journal Article")
             {
-                Journal[] documents = DatabaseHelper.Query<Journal>("dbo.spJournals_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray();
+                takable = DatabaseHelper.Query<Journal>("dbo.spJournals_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
             }
 
+            string returningDate = takable.EvaluateReturnDate(patronType);
+
             long availableCopyId = DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentId, UserId = userId }).FirstOrDefault();
-            DatabaseHelper.Execute("dbo.spCopies_takeCopyWithReturningDate @CopyId, @UserId, @ReturningDate", new { CopyId = availableCopyId, UserId = userId, ReturningDate = date });
+
+            DatabaseHelper.Execute("dbo.spCopies_takeCopyWithReturningDate @CopyId, @UserId, @ReturningDate", new { CopyId = availableCopyId, UserId = userId, ReturningDate = returningDate });
         }
 
         public static void ReturnDocument(long documentId, long userId)
@@ -172,16 +176,9 @@ namespace LISY.DataManagers
             }
         }
 
-        public static void DeleteCopyByDocumentId(Copy copy)
+        public static void DeleteCopy(long id)
         {
-            DatabaseHelper.Execute("dbo.spCopies_DeleteCopyByDocumentIdRoomLevel @DocId, @Room, @Level", new { DocId = copy.DocumentId, copy.Room, copy.Level });
-        }
-
-        public static void DeleteCopy(Copy copy)
-        {
-            if (copy == null)
-                throw new ArgumentNullException();
-            DatabaseHelper.Execute("dbo.spCopies_DeleteCopy @CopyId", new { CopyId = copy.Id });
+            DatabaseHelper.Execute("dbo.spCopies_DeleteCopy @CopyId", new { CopyId = id });
         }
 
         public static int GetNumberOfDocuments()
