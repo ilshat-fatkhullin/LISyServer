@@ -2,6 +2,7 @@
 using LISY.Entities.Users.Patrons;
 using LISY.Helpers;
 using System;
+using System.Collections;
 using System.Linq;
 
 namespace LISY.DataManagers
@@ -111,7 +112,18 @@ namespace LISY.DataManagers
 
         public static User[] GetUsersList()
         {
-            return DatabaseHelper.Query<User>("dbo.spUsers_GetAllUsers", null).ToArray();
+            var output = DatabaseHelper.Query<User>("dbo.spUsers_GetAllUsers", null);
+            if (output == null)
+                return new User[] { };
+            return output.ToArray();
+        }
+
+        public static Patron[] GetQueueToDocument(long documentId)
+        {
+            var output = DatabaseHelper.Query<Patron>("dbo.spQueue_GetQueueByDocumentId @DocumentId", new { DocumentId = documentId });
+            if (output == null)
+                return new Patron[] { };
+            return output.ToArray();
         }
     }
 }

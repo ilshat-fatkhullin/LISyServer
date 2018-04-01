@@ -198,42 +198,66 @@ namespace LISY.DataManagers
 
         public static Copy[] GetAllCopiesList()
         {
-            return DatabaseHelper.Query<Copy>("dbo.spCopies_GetAll", null).ToArray();
+            var output = DatabaseHelper.Query<Copy>("dbo.spCopies_GetAll", null);
+            if (output == null)
+                return new Copy[] { };
+            return output.ToArray();
         }
 
         public static Copy[] GetCheckedCopiesList()
         {
-            return DatabaseHelper.Query<Copy>("dbo.spCopies_GetChecked", null).ToArray();
+            var output = DatabaseHelper.Query<Copy>("dbo.spCopies_GetChecked", null);
+            if (output == null)
+                return new Copy[] { };
+            return output.ToArray();
         }
 
         public static Copy[] GetCheckedByUserCopiesList(long userId)
         {
-            return DatabaseHelper.Query<Copy>("dbo.spCopies_GetCheckedByUser @UserId", new { UserId = userId }).ToArray();
+            var output = DatabaseHelper.Query<Copy>("dbo.spCopies_GetCheckedByUser @UserId", new { UserId = userId });
+            if (output == null)
+                return new Copy[] { };
+            return output.ToArray();
         }
 
         public static AVMaterial[] GetAllAVMaterialsList()
         {
-            return DatabaseHelper.Query<AVMaterial>("dbo.spAudioVideos_GetAll", null).ToArray();
+            var output = DatabaseHelper.Query<AVMaterial>("dbo.spAudioVideos_GetAll", null);
+            if (output == null)
+                return new AVMaterial[] { };
+            return output.ToArray();
         }
 
         public static Book[] GetAllBooksList()
         {
-            return DatabaseHelper.Query<Book>("dbo.spBooks_GetAll", null).ToArray();
+            var output = DatabaseHelper.Query<Book>("dbo.spBooks_GetAll", null);
+            if (output == null)
+                return new Book[] { };
+            return output.ToArray();
         }
 
         public static InnerMaterial[] GetAllInnerMaterialsList()
         {
-            return DatabaseHelper.Query<InnerMaterial>("dbo.spInnerMaterials_GetAll", null).ToArray();
+            var output = DatabaseHelper.Query<InnerMaterial>("dbo.spInnerMaterials_GetAll", null);
+            if (output == null)
+                return new InnerMaterial[] { };
+            return output.ToArray();
         }
 
         public static Journal[] GetAllJournalsList()
         {
-            return DatabaseHelper.Query<Journal>("dbo.spJournals_GetAll", null).ToArray();
+            var output = DatabaseHelper.Query<Journal>("dbo.spJournals_GetAll", null);
+            if (output == null)
+                return new Journal[] { };
+            return output.ToArray();
         }
 
         public static Article[] GetAllArticlesList()
-        {            
-            return DatabaseHelper.Query<Article>("dbo.spJournalArticles_GetAll", null).ToArray();            
+        {
+            var output = DatabaseHelper.Query<Article>("dbo.spJournalArticles_GetAll", null);
+            if (output == null)
+                return new Article[] { };
+            return output.ToArray();
         }
 
         public static long GetDocumentId(Document document)

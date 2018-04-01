@@ -277,6 +277,13 @@ namespace LISY.Controllers
         public bool IsAvailable(long documentId, long patronId)
         {
             return DocumentsDataManager.IsAvailable(documentId, patronId);
-        }        
+        }
+
+        [Route("get_queue_to_document")]
+        [HttpGet]
+        public Patron[] GetQueueToDocument(long documentId)
+        {
+            return UsersDataManager.GetQueueToDocument(documentId);
+        }
     }
 }
