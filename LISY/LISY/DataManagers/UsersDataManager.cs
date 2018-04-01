@@ -9,55 +9,102 @@ namespace LISY.DataManagers
 {
     public static class UsersDataManager
     {
-        private static bool AddUser(User user, string login, string password)
+        private static bool IsUserInTable(User user)
         {
-            bool output = DatabaseHelper.Query<bool>("dbo.spUsers_IsUserInTable @FirstName, @SecondName, @Phone",
+            return DatabaseHelper.Query<bool>("dbo.spUsers_IsUserInTable @FirstName, @SecondName, @Phone",
                 new
                 {
                     FirstName = user.FirstName,
                     SecondName = user.SecondName,
                     Phone = user.Phone
                 }).ToList().FirstOrDefault();
-            if (!output)
-            {
-                long cardNumber = CredentialsDataManager.AddUserCredentials(login, password);
-                user.CardNumber = cardNumber;
-                DatabaseHelper.Execute("dbo.spUsers_AddUser @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Type",
-                        new
-                        {
-                            FirstName = user.FirstName,
-                            SecondName = user.SecondName,
-                            CardNumber = user.CardNumber,
-                            Phone = user.Phone,
-                            Address = user.Address,
-                            Type = user.GetType().ToString().Split('.').Last()
-                        });
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        }        
 
         public static bool AddLibrarian(Librarian librarian, string login, string password)
         {
-            return AddUser(librarian, login, password);
+            bool isUserInTable = IsUserInTable(librarian);
+            if (!isUserInTable)
+            {
+                long cardNumber = CredentialsDataManager.AddUserCredentials(login, password);
+                librarian.CardNumber = cardNumber;
+                DatabaseHelper.Execute("dbo.spUsers_AddUser @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Type",
+                        new
+                        {
+                            FirstName = librarian.FirstName,
+                            SecondName = librarian.SecondName,
+                            CardNumber = librarian.CardNumber,
+                            Phone = librarian.Phone,
+                            Address = librarian.Address,
+                            Type = "Librarian"
+                        });
+            }
+            return !isUserInTable;
         }
 
         public static bool AddFaculty(Faculty faculty, string login, string password)
         {
-            return AddUser(faculty, login, password);
+            bool isUserInTable = IsUserInTable(faculty);
+            if (!isUserInTable)
+            {
+                long cardNumber = CredentialsDataManager.AddUserCredentials(login, password);
+                faculty.CardNumber = cardNumber;
+                DatabaseHelper.Execute("dbo.spPatrons_AddPatron @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Priority, @Type",
+                        new
+                        {
+                            FirstName = faculty.FirstName,
+                            SecondName = faculty.SecondName,
+                            CardNumber = faculty.CardNumber,
+                            Phone = faculty.Phone,
+                            Address = faculty.Address,
+                            Priority = faculty.Priority,
+                            Type = "Faculty"
+                        });
+            }
+            return !isUserInTable;
         }
 
         public static bool AddStudent(Student student, string login, string password)
         {
-            return AddUser(student, login, password);
+            bool isUserInTable = IsUserInTable(student);
+            if (!isUserInTable)
+            {
+                long cardNumber = CredentialsDataManager.AddUserCredentials(login, password);
+                student.CardNumber = cardNumber;
+                DatabaseHelper.Execute("dbo.spPatrons_AddPatron @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Priority, @Type",
+                        new
+                        {
+                            FirstName = student.FirstName,
+                            SecondName = student.SecondName,
+                            CardNumber = student.CardNumber,
+                            Phone = student.Phone,
+                            Address = student.Address,
+                            Priority = student.Priority,
+                            Type = "Student"
+                        });
+            }
+            return !isUserInTable;
         }
 
         public static bool AddGuest(Guest guest, string login, string password)
         {
-            return AddUser(guest, login, password);
+            bool isUserInTable = IsUserInTable(guest);
+            if (!isUserInTable)
+            {
+                long cardNumber = CredentialsDataManager.AddUserCredentials(login, password);
+                guest.CardNumber = cardNumber;
+                DatabaseHelper.Execute("dbo.spPatrons_AddPatron @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Priority, @Type",
+                        new
+                        {
+                            FirstName = guest.FirstName,
+                            SecondName = guest.SecondName,
+                            CardNumber = guest.CardNumber,
+                            Phone = guest.Phone,
+                            Address = guest.Address,
+                            Priority = guest.Priority,
+                            Type = "Guest"
+                        });
+            }
+            return !isUserInTable;
         }
 
         private static void EditUser(User newUser)
@@ -101,8 +148,18 @@ namespace LISY.DataManagers
         public static void DeleteUser(long userId)
         {            
             CredentialsDataManager.DeleteUserCredentials(userId);
-            DatabaseHelper.Execute("dbo.spUsers_DeleteUser @CardNumber", CredentialsDataManager.GetUserByID(userId));
+            DatabaseHelper.Execute("dbo.spUsers_DeleteUser @CardNumber", GetUserById(userId));
+        }
+
+        public static User GetUserById(long userId)
+        {
+            return DatabaseHelper.Query<User>("dbo.spUsers_GetUserById @Id", new { Id = userId }).FirstOrDefault();
         }        
+
+        public static Patron GetPatronById(long patronId)
+        {            
+            return DatabaseHelper.Query<Patron>("dbo.spPatrons_GetPatronById @Id", new { Id = patronId }).FirstOrDefault();
+        }
 
         public static int GetNumberOfUsers()
         {
@@ -124,6 +181,11 @@ namespace LISY.DataManagers
             if (output == null)
                 return new Patron[] { };
             return output.ToArray();
+        }
+
+        public static void DeleteQueueToDocument(long documentId)
+        {
+            DatabaseHelper.Execute("dbo.spQueue_DeleteQueueByDocumentId @DocumentId", new { DocumentId = documentId });
         }
     }
 }

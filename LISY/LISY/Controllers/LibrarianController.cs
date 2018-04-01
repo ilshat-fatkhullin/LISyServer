@@ -1,6 +1,7 @@
 ﻿using LISY.DataManagers;
 using LISY.Entities.Documents;
 using LISY.Entities.Requests;
+using LISY.Entities.Requests.Librarian.Delete;
 using LISY.Entities.Requests.Librarian.Post;
 using LISY.Entities.Requests.Librarian.Put;
 using LISY.Entities.Users;
@@ -12,7 +13,7 @@ namespace LISY.Controllers
     [Produces("application/json")]
     [Route("api/Librarian")]
     public class LibrarianController : Controller
-    {
+    {        
         [Route("add_article")]
         [HttpPost]
         public long AddArticle([FromBody]Article article)
@@ -46,8 +47,8 @@ namespace LISY.Controllers
         public long AddJournal([FromBody]Journal journal)
         {
             return DocumentsDataManager.AddJournal(journal);
-        }
-
+        }        
+        
         [Route("edit_article")]
         [HttpPut]
         public void EditArticle([FromBody]Article article)
@@ -60,28 +61,28 @@ namespace LISY.Controllers
         public void EditAVMaterial([FromBody]AVMaterial avMaterial)
         {
             DocumentsDataManager.EditAVMaterial(avMaterial);
-        }        
+        }
 
         [Route("edit_book")]
         [HttpPut]
         public void EditBook([FromBody]Book book)
         {
             DocumentsDataManager.EditBook(book);
-        }        
+        }
 
         [Route("edit_inner_material")]
         [HttpPut]
         public void EditInnerMaterial([FromBody]InnerMaterial innerMaterial)
         {
             DocumentsDataManager.EditInnerMaterial(innerMaterial);
-        }        
+        }
 
         [Route("edit_journal")]
         [HttpPost]
         public void EditJournal([FromBody]Journal journal)
         {
             DocumentsDataManager.EditJournal(journal);
-        }
+        }        
 
         [Route("delete_document")]
         [HttpDelete]
@@ -95,10 +96,10 @@ namespace LISY.Controllers
         public void ReturnDocument([FromBody]ReturnDocumentRequest request)
         {
             DocumentsDataManager.ReturnDocument(request.DocumentId, request.UserId);
-        }
+        }        
 
-        [Route("add_librarian")]        
-        [HttpPost]        
+        [Route("add_librarian")]
+        [HttpPost]
         public bool AddLibrarian([FromBody]AddLibrarianRequest request)
         {
             return UsersDataManager.AddLibrarian(request.Librarian, request.Login, request.Password);
@@ -123,7 +124,7 @@ namespace LISY.Controllers
         public bool AddGuest([FromBody]AddGuestRequest request)
         {
             return UsersDataManager.AddGuest(request.Guest, request.Login, request.Password);
-        }
+        }             
 
         [Route("edit_librarian")]
         [HttpPut]
@@ -151,15 +152,36 @@ namespace LISY.Controllers
         public void EditGuest([FromBody]Guest guest)
         {
             UsersDataManager.EditGuest(guest);
+        }        
+        
+        [Route("get_user")]
+        [HttpGet]
+        public User GetUserById(long userId)
+        {
+            return UsersDataManager.GetUserById(userId);
         }
+
+        [Route("get_patron")]
+        [HttpGet]
+        public Patron GetPatronById(long patronId)
+        {
+            return UsersDataManager.GetPatronById(patronId);
+        }        
 
         [Route("delete_user")]
         [HttpDelete]
         public void DeleteUser([FromBody]DeleteUserRequest request)
         {
             UsersDataManager.DeleteUser(request.UserId);
-        }        
+        }
 
+        [Route("get_all_users")]
+        [HttpGet]
+        public User[] GetAllUsersList()
+        {
+            return UsersDataManager.GetUsersList();
+        }        
+        
         [Route("add_copies")]
         [HttpPost]
         public void AddCopies([FromBody]AddCopiesRequest request)
@@ -172,20 +194,6 @@ namespace LISY.Controllers
         public void DeleteCopy([FromBody]DeleteDocumentRequest request)
         {
             DocumentsDataManager.DeleteCopy(request.Id);
-        }        
-
-        [Route("get_all_copies")]
-        [HttpGet]
-        public Copy[] GetAllCopiesList()
-        {
-            return DocumentsDataManager.GetAllCopiesList();
-        }
-
-        [Route("clear_all")]
-        [HttpDelete]
-        public void ClearAll()
-        {
-            DatabaseDataManager.ClearAll();
         }
 
         [Route("get_checked_copies")]
@@ -195,12 +203,26 @@ namespace LISY.Controllers
             return DocumentsDataManager.GetCheckedCopiesList();
         }
 
-        [Route("get_all_users")]
+        [Route("get_all_copies")]
         [HttpGet]
-        public User[] GetAllUsersList()
+        public Copy[] GetAllCopiesList()
         {
-            return UsersDataManager.GetUsersList();
+            return DocumentsDataManager.GetAllCopiesList();
         }
+
+        [Route("get_copies_number")]
+        [HttpGet]
+        public int GetNumberOfCopies()
+        {
+            return DocumentsDataManager.GetNumberOfCopies();
+        }        
+
+        [Route("clear_all")]
+        [HttpDelete]
+        public void ClearAll()
+        {
+            DatabaseDataManager.ClearAll();
+        }        
 
         [Route("get_all_av_materials")]
         [HttpGet]
@@ -228,14 +250,7 @@ namespace LISY.Controllers
         public int GetNumberOfUsers()
         {
             return UsersDataManager.GetNumberOfUsers();
-        }
-
-        [Route("get_copies_number")]
-        [HttpGet]
-        public int GetNumberOfCopies()
-        {
-            return DocumentsDataManager.GetNumberOfCopies();
-        }
+        }        
 
         [Route("get_all_inner_materials")]
         [HttpGet]
@@ -258,13 +273,6 @@ namespace LISY.Controllers
             return DocumentsDataManager.GetAllArticlesList();
         }
 
-        [Route("get_user")]
-        [HttpGet]
-        public User GetUserById(long userId)
-        {
-            return CredentialsDataManager.GetUserByID(userId);
-        }
-
         [Route("get_copies_checked_by_user")]
         [HttpGet]
         public Copy[] GetCheckedByUserCopiesList(long userId)
@@ -284,6 +292,13 @@ namespace LISY.Controllers
         public Patron[] GetQueueToDocument(long documentId)
         {
             return UsersDataManager.GetQueueToDocument(documentId);
+        }
+
+        [Route("delete_queue_to_document")]
+        [HttpDelete]
+        public void DeleteQueueToDocument(DeleteQueueToDocumentRequest request)
+        {
+            UsersDataManager.DeleteQueueToDocument(request.DocumentId);
         }
     }
 }

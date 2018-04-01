@@ -20,13 +20,7 @@ namespace LISY.DataManagers
             }
 
             return -1;
-        }
-
-        public static string GetUserType(long userId)
-        {
-            var output = DatabaseHelper.Query<String>("dbo.spUsers_GetUserTypeByCard  @CardNumber", new { CardNumber = userId }).ToList();
-            return output[0];
-        }
+        }        
 
         public static long AddUserCredentials(string login, string password)
         {
@@ -43,11 +37,6 @@ namespace LISY.DataManagers
         {
             DatabaseHelper.Execute("dbo.spCredentials_ModifyCredential @CardNumber, @Password",
                     new { CardNumber = userId, Password = password });
-        }
-
-        public static User GetUserByID(long userID)
-        {
-            return DatabaseHelper.Query<User>("dbo.spUsers_GetUserById @Id", new { Id = userID }).FirstOrDefault();
         }
     }
 }
