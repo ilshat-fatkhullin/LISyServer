@@ -1,6 +1,7 @@
 ﻿using LISY.Entities.Users.Patrons;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,9 +25,13 @@ namespace LISY.Entities.Documents
 
         public bool IsBestseller { get; set; }
 
-        public override string EvaluateReturnDate(string patronType)
+        public override string EvaluateReturnDate(string dateString, string patronType)
         {
-            DateTime date = DateTime.Today;
+            string[] dateParts = dateString.Split('/');
+            DateTime date = new DateTime(
+                Convert.ToInt32(dateParts[2]),
+                Convert.ToInt32(dateParts[0]),
+                Convert.ToInt32(dateParts[1]));
             if (patronType.Equals(Guest.TYPE))
             {
                 date = date.AddDays(GUEST_RETURN_TIME);

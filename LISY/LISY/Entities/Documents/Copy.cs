@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LISY.Entities.Documents
+﻿namespace LISY.Entities.Documents
 {
     public class Copy
     {
@@ -20,5 +15,7 @@ namespace LISY.Entities.Documents
         public int Level { get; set; }
 
         public string ReturningDate { get; set; }
+
+        public bool IsRenewed { get; set; }
     }
 }

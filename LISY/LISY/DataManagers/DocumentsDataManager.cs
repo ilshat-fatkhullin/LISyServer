@@ -1,8 +1,8 @@
-﻿using Dapper;
-using LISY.Entities.Documents;
+﻿using LISY.Entities.Documents;
+using LISY.Entities.Notifications;
+using LISY.Entities.Users;
 using LISY.Helpers;
 using System;
-using System.Data;
 using System.Linq;
 
 namespace LISY.DataManagers
@@ -14,7 +14,7 @@ namespace LISY.DataManagers
             if (avMaterial == null)
                 throw new ArgumentNullException();
 
-            DatabaseHelper.Execute("dbo.spAudioVideos_AddAV @Title, @Authors, @KeyWords, @CoverURL, @Price",
+            DatabaseHelper.Execute("dbo.spAudioVideos_AddAV @Title, @Authors, @KeyWords, @CoverURL, @Price, @IsOutstanding",
                         avMaterial);
 
             return GetDocumentId(avMaterial);
@@ -25,7 +25,7 @@ namespace LISY.DataManagers
             if (book == null)
                 throw new ArgumentNullException();
 
-            DatabaseHelper.Execute("dbo.spBooks_AddBook @Title, @Authors, @Publisher, @Edition, @Year, @IsBestseller, @KeyWords, @CoverURL, @Price",
+            DatabaseHelper.Execute("dbo.spBooks_AddBook @Title, @Authors, @Publisher, @Edition, @Year, @IsBestseller, @KeyWords, @CoverURL, @Price, @IsOutstanding",
                         book);
 
             return GetDocumentId(book);
@@ -47,7 +47,7 @@ namespace LISY.DataManagers
             if (journal == null)
                 throw new ArgumentNullException();
 
-            DatabaseHelper.Execute("dbo.spJournals_AddJournal @Title, @Authors, @Publisher, @Issue, @PublicationDate, @KeyWords, @CoverURL, @Price",
+            DatabaseHelper.Execute("dbo.spJournals_AddJournal @Title, @Authors, @Publisher, @Issue, @PublicationDate, @KeyWords, @CoverURL, @Price, @IsOutstanding",
                         journal);
 
             return GetDocumentId(journal);
@@ -114,38 +114,20 @@ namespace LISY.DataManagers
             DatabaseHelper.Execute("dbo.spDocuments_DeleteDocument @Id", new { Id = id });
         }
 
-        public static void CheckOutDocument(long documentId, long userId)
+        public static void CheckOutDocument(long documentId, long patronId)
         {
-            if (!IsAvailable(documentId, userId))
+            if (!IsAvailable(documentId, patronId))
                 return;
 
-            string documentType = GetType(documentId);
-            string patronType = DatabaseHelper.Query<string>("dbo.spUsers_GetType @UserId", new { UserId = userId }).FirstOrDefault();            
+            string patronType = UsersDataManager.GetPatronType(patronId);
 
-            Takable takable = null;
+            Takable takable = GetTakable(documentId);
 
-            if (documentType == "Inner")
-            {
-                return;
-            }
-            else if (documentType == "Book")
-            {
-                takable = DatabaseHelper.Query<Book>("dbo.spBooks_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
-            }
-            else if (documentType == "AV")
-            {
-                takable = DatabaseHelper.Query<AVMaterial>("dbo.spAudioVideos_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
-            }
-            else if (documentType == "Journal Article")
-            {
-                takable = DatabaseHelper.Query<Journal>("dbo.spJournals_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
-            }
+            string returningDate = takable.EvaluateReturnDate(DateTime.Today.ToShortDateString(), patronType);
 
-            string returningDate = takable.EvaluateReturnDate(patronType);
+            long availableCopyId = DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentId, UserId = patronId }).FirstOrDefault();
 
-            long availableCopyId = DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentId, UserId = userId }).FirstOrDefault();
-
-            DatabaseHelper.Execute("dbo.spCopies_takeCopyWithReturningDate @CopyId, @UserId, @ReturningDate", new { CopyId = availableCopyId, UserId = userId, ReturningDate = returningDate });
+            DatabaseHelper.Execute("dbo.spCopies_takeCopyWithReturningDate @CopyId, @UserId, @ReturningDate", new { CopyId = availableCopyId, UserId = patronId, ReturningDate = returningDate });
         }
 
         public static void ReturnDocument(long documentId, long userId)
@@ -155,7 +137,7 @@ namespace LISY.DataManagers
 
         public static bool IsAvailable(long documentID, long userID)
         {
-            return DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentID, UserId = userID }).ToList().Count != 0;            
+            return DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentID, UserId = userID }).ToList().Count != 0;
         }
 
         public static string GetType(long documentId)
@@ -212,7 +194,7 @@ namespace LISY.DataManagers
             return output.ToArray();
         }
 
-        public static Copy[] GetCheckedByUserCopiesList(long userId)
+        public static Copy[] GetCheckedByPatronCopiesList(long userId)
         {
             var output = DatabaseHelper.Query<Copy>("dbo.spCopies_GetCheckedByUser @UserId", new { UserId = userId });
             if (output == null)
@@ -264,6 +246,74 @@ namespace LISY.DataManagers
         {
             return DatabaseHelper.Query<Document>("dbo.spDocuments_GetDocumentId @Title, @Authors, @KeyWords",
                 new { Title = document.Title, Authors = document.Authors, KeyWords = document.KeyWords }).FirstOrDefault().Id;
+        }
+
+        public static void SetOutstanding(bool state, long documentId)
+        {
+            if (state)
+            {
+                string title = GetTakable(documentId).Title;
+                string message = title + " is not available now.";
+                foreach (Patron p in UsersDataManager.GetQueueToDocument(documentId))
+                {
+                    NotificationsDataManager.AddNotification(new Notification() { PatronId = p.CardNumber, Message = message});
+                }
+                message = "You have to return document " + title + ".";
+                foreach (Patron p in UsersDataManager.GetPatronsCheckedByDocumentId(documentId))
+                {
+                    NotificationsDataManager.AddNotification(new Notification() { PatronId = p.CardNumber, Message = message });
+                }
+            }
+            DatabaseHelper.Execute("dbo.spTakable_SetOutstanding @State, @DocumentId", new { State = state, DocumentId = documentId });
+        }
+
+        public static void RenewCopy(long documentId, long patronId)
+        {
+            Copy[] copies = GetCheckedByPatronCopiesList(patronId);
+            Copy copy = null;
+            foreach (Copy c in copies)
+            {
+                if (c.DocumentId == documentId && c.PatronId == patronId)
+                {
+                    copy = c;
+                }
+            }
+            if (copy == null)
+                return;
+            string patronType = UsersDataManager.GetPatronType(patronId);
+            if (copy.IsRenewed && patronType != "Guest")
+                return;
+            Takable takable = GetTakable(documentId);
+            if (takable.IsOutstanding)
+                return;
+            string returningDate = takable.EvaluateReturnDate(copy.ReturningDate, patronType);
+            DatabaseHelper.Execute("dbo.spCopies_RenewDocument @DocumentId, @PatronId, @ReturningDate", new {
+                DocumentId = documentId,
+                PatronId = patronId,
+                ReturningDate = returningDate});
+        }
+
+        private static Takable GetTakable(long documentId)
+        {
+            string documentType = GetType(documentId);
+            Takable takable = null;
+            if (documentType == "Inner")
+            {
+                return null;
+            }
+            else if (documentType == "Book")
+            {
+                takable = DatabaseHelper.Query<Book>("dbo.spBooks_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
+            }
+            else if (documentType == "AV")
+            {
+                takable = DatabaseHelper.Query<AVMaterial>("dbo.spAudioVideos_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
+            }
+            else if (documentType == "Journal Article")
+            {
+                takable = DatabaseHelper.Query<Journal>("dbo.spJournals_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
+            }
+            return takable;
         }
     }
 }

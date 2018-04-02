@@ -2,7 +2,6 @@
 using LISY.Entities.Users.Patrons;
 using LISY.Helpers;
 using System;
-using System.Collections;
 using System.Linq;
 
 namespace LISY.DataManagers
@@ -175,6 +174,11 @@ namespace LISY.DataManagers
             return output.ToArray();
         }
 
+        public static string GetPatronType(long patronId)
+        {
+            return DatabaseHelper.Query<string>("dbo.spPatrons_GetType @PatronId", new { PatronId = patronId }).FirstOrDefault();
+        }
+
         public static Patron[] GetQueueToDocument(long documentId)
         {
             var output = DatabaseHelper.Query<Patron>("dbo.spQueue_GetQueueByDocumentId @DocumentId", new { DocumentId = documentId });
@@ -186,6 +190,19 @@ namespace LISY.DataManagers
         public static void DeleteQueueToDocument(long documentId)
         {
             DatabaseHelper.Execute("dbo.spQueue_DeleteQueueByDocumentId @DocumentId", new { DocumentId = documentId });
+        }
+
+        public static void AddToQueue(long documentId, long patronId)
+        {
+            DatabaseHelper.Execute("dbo.spQueue_AddPatron @DocumentId, @PatronId", new { DocumentId = documentId, PatronId = patronId });
+        }
+
+        public static Patron[] GetPatronsCheckedByDocumentId(long documentId)
+        {
+            var output = DatabaseHelper.Query<Patron>("dbo.spCopies_GetPatronsByDocumentId @DocumentId", new { DocumentId = documentId });
+            if (output == null)
+                return new Patron[] { };
+            return output.ToArray();
         }
     }
 }

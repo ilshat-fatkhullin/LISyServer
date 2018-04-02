@@ -11,9 +11,11 @@ namespace LISY.Entities.Documents
 
         public int Price { get; set; }
 
-        public virtual string EvaluateReturnDate(string patronType)
+        public bool IsOutstanding { get; set; }
+
+        public virtual string EvaluateReturnDate(string dateString, string patronType)
         {
-            DateTime date = DateTime.Today;
+            DateTime date = DateTime.Parse(dateString);
             if (patronType.Equals(Guest.TYPE))
             {
                 date = date.AddDays(GUEST_RETURN_TIME);

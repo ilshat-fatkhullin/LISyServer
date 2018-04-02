@@ -1,5 +1,6 @@
 ﻿using LISY.DataManagers;
 using LISY.Entities.Documents;
+using LISY.Entities.Notifications;
 using LISY.Entities.Requests;
 using LISY.Entities.Requests.Librarian.Delete;
 using LISY.Entities.Requests.Librarian.Post;
@@ -277,7 +278,7 @@ namespace LISY.Controllers
         [HttpGet]
         public Copy[] GetCheckedByUserCopiesList(long userId)
         {
-            return DocumentsDataManager.GetCheckedByUserCopiesList(userId);
+            return DocumentsDataManager.GetCheckedByPatronCopiesList(userId);
         }
 
         [Route("is_available")]
@@ -296,9 +297,16 @@ namespace LISY.Controllers
 
         [Route("delete_queue_to_document")]
         [HttpDelete]
-        public void DeleteQueueToDocument(DeleteQueueToDocumentRequest request)
+        public void DeleteQueueToDocument([FromBody]DeleteQueueToDocumentRequest request)
         {
             UsersDataManager.DeleteQueueToDocument(request.DocumentId);
         }
+
+        [Route("set_outstanding")]
+        [HttpPut]
+        public void SetOutstanding([FromBody]MakeOutstandingRequest request)
+        {
+            DocumentsDataManager.SetOutstanding(request.State, request.DocumentId);
+        }        
     }
 }
