@@ -1,0 +1,11 @@
+C:\Repositories\LISyServer\LISY\LISY\bin\Release\netcoreapp2.0\LISY.deps.json
+C:\Repositories\LISyServer\LISY\LISY\bin\Release\netcoreapp2.0\LISY.runtimeconfig.json
+C:\Repositories\LISyServer\LISY\LISY\bin\Release\netcoreapp2.0\LISY.runtimeconfig.dev.json
+C:\Repositories\LISyServer\LISY\LISY\bin\Release\netcoreapp2.0\LISY.dll
+C:\Repositories\LISyServer\LISY\LISY\bin\Release\netcoreapp2.0\LISY.pdb
+C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.csprojResolveAssemblyReference.cache
+C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.csproj.CoreCompileInputs.cache
+C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.AssemblyInfoInputs.cache
+C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.AssemblyInfo.cs
+C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.dll
+C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.pdb

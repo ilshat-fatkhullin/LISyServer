@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using LISY.DataManagers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LISY.Controllers
@@ -11,5 +7,11 @@ namespace LISY.Controllers
     [Route("api/Database")]
     public class DatabaseController : Controller
     {
+        [HttpDelete]
+        [Route("delete")]
+        public void Delete()
+        {
+            DatabaseDataManager.ClearAll();
+        }        
     }
 }
