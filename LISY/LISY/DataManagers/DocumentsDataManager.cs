@@ -121,7 +121,7 @@ namespace LISY.DataManagers
 
             string patronType = UsersDataManager.GetPatronType(patronId);
 
-            Takable takable = GetTakable(documentId);
+            Takable takable = GetTakableById(documentId);
 
             string returningDate = takable.EvaluateReturnDate(DateTime.Today.ToShortDateString(), patronType);
 
@@ -133,6 +133,15 @@ namespace LISY.DataManagers
         public static void ReturnDocument(long documentId, long userId)
         {
             DatabaseHelper.Execute("dbo.spCopies_ReturnDocument @DocumentId, @UserId", new { DocumentId = documentId, UserId = userId });
+            Patron[] patrons = UsersDataManager.GetQueueToDocument(documentId);
+            if (patrons.Length != 0)
+            {
+                Takable takable = GetTakableById(documentId);
+                NotificationsDataManager.AddNotification(new Notification() {
+                    PatronId = patrons[0].CardNumber,
+                    Message =  takable.Title + " now waiting for you." });
+                DatabaseHelper.Execute("dbo.spQueue_RemovePatronByDocumentId @DocumentId, @PatronId", new { DocumentId = documentId, PatronId = userId });
+            }
         }
 
         public static bool IsAvailable(long documentID, long userID)
@@ -194,7 +203,7 @@ namespace LISY.DataManagers
             return output.ToArray();
         }
 
-        public static Copy[] GetCheckedByPatronCopiesList(long userId)
+        public static Copy[] GetCheckedCopiesByPatronId(long userId)
         {
             var output = DatabaseHelper.Query<Copy>("dbo.spCopies_GetCheckedByUser @UserId", new { UserId = userId });
             if (output == null)
@@ -252,7 +261,7 @@ namespace LISY.DataManagers
         {
             if (state)
             {
-                string title = GetTakable(documentId).Title;
+                string title = GetTakableById(documentId).Title;
                 string message = title + " is not available now.";
                 foreach (Patron p in UsersDataManager.GetQueueToDocument(documentId))
                 {
@@ -269,7 +278,7 @@ namespace LISY.DataManagers
 
         public static void RenewCopy(long documentId, long patronId)
         {
-            Copy[] copies = GetCheckedByPatronCopiesList(patronId);
+            Copy[] copies = GetCheckedCopiesByPatronId(patronId);
             Copy copy = null;
             foreach (Copy c in copies)
             {
@@ -283,7 +292,7 @@ namespace LISY.DataManagers
             string patronType = UsersDataManager.GetPatronType(patronId);
             if (copy.IsRenewed && patronType != "Guest")
                 return;
-            Takable takable = GetTakable(documentId);
+            Takable takable = GetTakableById(documentId);
             if (takable.IsOutstanding)
                 return;
             string returningDate = takable.EvaluateReturnDate(copy.ReturningDate, patronType);
@@ -293,27 +302,22 @@ namespace LISY.DataManagers
                 ReturningDate = returningDate});
         }
 
-        private static Takable GetTakable(long documentId)
+        public static Takable GetTakableById(long documentId)
         {
             string documentType = GetType(documentId);
-            Takable takable = null;
-            if (documentType == "Inner")
-            {
-                return null;
-            }
-            else if (documentType == "Book")
-            {
-                takable = DatabaseHelper.Query<Book>("dbo.spBooks_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
-            }
-            else if (documentType == "AV")
-            {
-                takable = DatabaseHelper.Query<AVMaterial>("dbo.spAudioVideos_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
-            }
-            else if (documentType == "Journal Article")
-            {
-                takable = DatabaseHelper.Query<Journal>("dbo.spJournals_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];
-            }
+            Takable takable = DatabaseHelper.Query<Book>("dbo.spTakable_GetAllById @DocumentId", new { DocumentId = documentId }).ToArray()[0];            
             return takable;
+        }
+
+        public static Takable[] GetCheckedByPatronId(long patronId)
+        {
+            var output = DatabaseHelper.Query<AVMaterial>("dbo.spTakable_GetCheckedByPatronId @PatronId",
+                new {
+                    PatronId = patronId
+                });
+            if (output == null)
+                return new AVMaterial[] { };
+            return output.ToArray();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LISY.DataManagers;
 using LISY.Entities.Documents;
+using LISY.Entities.Fines;
 using LISY.Entities.Notifications;
 using LISY.Entities.Requests;
 using LISY.Entities.Requests.Librarian.Delete;
@@ -167,7 +168,14 @@ namespace LISY.Controllers
         public Patron GetPatronById(long patronId)
         {
             return UsersDataManager.GetPatronById(patronId);
-        }        
+        }
+
+        [Route("get_takable")]
+        [HttpGet]
+        public Takable GetTakableById(long takableId)
+        {
+            return DocumentsDataManager.GetTakableById(takableId);
+        }
 
         [Route("delete_user")]
         [HttpDelete]
@@ -278,7 +286,7 @@ namespace LISY.Controllers
         [HttpGet]
         public Copy[] GetCheckedByUserCopiesList(long userId)
         {
-            return DocumentsDataManager.GetCheckedByPatronCopiesList(userId);
+            return DocumentsDataManager.GetCheckedCopiesByPatronId(userId);
         }
 
         [Route("is_available")]
@@ -308,5 +316,12 @@ namespace LISY.Controllers
         {
             DocumentsDataManager.SetOutstanding(request.State, request.DocumentId);
         }        
+
+        [Route("get_fines_by_patron")]
+        [HttpGet]
+        public Fine[] GetFinesByPatronId(long patronId)
+        {
+            return UsersDataManager.GetFinesByPatronId(patronId);
+        }
     }
 }

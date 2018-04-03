@@ -1,7 +1,10 @@
-﻿using LISY.Entities.Users;
+﻿using LISY.Entities.Documents;
+using LISY.Entities.Fines;
+using LISY.Entities.Users;
 using LISY.Entities.Users.Patrons;
 using LISY.Helpers;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LISY.DataManagers
@@ -203,6 +206,29 @@ namespace LISY.DataManagers
             if (output == null)
                 return new Patron[] { };
             return output.ToArray();
+        }
+
+        public static Fine[] GetFinesByPatronId(long patronId)
+        {
+            CopyWithPrice[] copies = new CopyWithPrice[] { };
+            var output = DatabaseHelper.Query<CopyWithPrice>("dbo.spCopies_GetCheckedCopiesWithPriceByPatronId @PatronId",
+                new
+                {
+                    PatronId = patronId
+                });
+            if (output != null)
+                copies = output.ToArray();
+            List<Fine> fines = new List<Fine>();
+            foreach (CopyWithPrice copy in copies)
+            {
+                int fine = copy.CountFine();
+                if (fine > 0)
+                    fines.Add(new Fine {
+                        DocumentId = copy.DocumentId,
+                        FineAmount = fine,
+                        PatronId = patronId });
+            }
+            return fines.ToArray();
         }
     }
 }
