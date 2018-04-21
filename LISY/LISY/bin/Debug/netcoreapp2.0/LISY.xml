@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LISY</name>
+    </assembly>
+    <members>
+        <member name="T:LISY.Controllers.CredentialsController">
+            <summary>
+            Implements all HTTP requests to credentials
+            </summary>
+        </member>
+        <member name="M:LISY.Controllers.CredentialsController.Authorize(System.String,System.String)">
+            <summary>
+            Tries to authorize user with given login and password and returns his id
+            </summary>
+            <param name="login">Given login</param>
+            <param name="password">Given password</param>
+            <returns>User id if authorization is successfull and -1 if it is not</returns>
+        </member>
+        <member name="M:LISY.Controllers.CredentialsController.EditUserCredentials(LISY.Entities.Requests.Librarian.Put.EditUserCredentialsRequest)">
+            <summary>
+            Edits user credentials by given request
+            </summary>
+            <param name="request">Given request</param>
+        </member>
+        <member name="T:LISY.Controllers.DatabaseController">
+            <summary>
+            Implements all HTTP requests to database
+            </summary>
+        </member>
+        <member name="M:LISY.Controllers.DatabaseController.Delete">
+            <summary>
+            Clears all tables in database (do not change its structure)
+            </summary>
+        </member>
+        <member name="T:LISY.Controllers.LibrarianController">
+            <summary>
+            Implements all HTTP requests to librarian
+            </summary>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddArticle(LISY.Entities.Documents.Article)">
+            <summary>
+            Adds given article to database
+            </summary>
+            <param name="article">Given article</param>
+            <returns>Id of added article</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddAVMaterial(LISY.Entities.Documents.AVMaterial)">
+            <summary>
+            Adds given AV material to database
+            </summary>
+            <param name="avMaterial">Given AV material</param>
+            <returns>Id of added AV material</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddBook(LISY.Entities.Documents.Book)">
+            <summary>
+            Adds given bool to database
+            </summary>
+            <param name="book">Given book</param>
+            <returns>Id of added book</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddInnerMaterial(LISY.Entities.Documents.InnerMaterial)">
+            <summary>
+            Adds given inner material to database
+            </summary>
+            <param name="innerMaterial">Given inner material</param>
+            <returns>Id of added inner material</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddJournal(LISY.Entities.Documents.Journal)">
+            <summary>
+            Adds given journal to database
+            </summary>
+            <param name="journal">Given journal</param>
+            <returns>Id of added journal</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditArticle(LISY.Entities.Documents.Article)">
+            <summary>
+            Edits given article in database
+            </summary>
+            <param name="article">Given article</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditAVMaterial(LISY.Entities.Documents.AVMaterial)">
+            <summary>
+            Edits given AV material in database
+            </summary>
+            <param name="avMaterial">Given AV material</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditBook(LISY.Entities.Documents.Book)">
+            <summary>
+            Edits given book in database
+            </summary>
+            <param name="book">Given book</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditInnerMaterial(LISY.Entities.Documents.InnerMaterial)">
+            <summary>
+            Edits given inner material in database
+            </summary>
+            <param name="innerMaterial">Given inner material</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditJournal(LISY.Entities.Documents.Journal)">
+            <summary>
+            Edits given journal in database
+            </summary>
+            <param name="journal">Given journal</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.DeleteDocument(LISY.Entities.Requests.Librarian.Delete.DeleteDocumentRequest)">
+            <summary>
+            Deletes given document from database
+            </summary>
+            <param name="request">Document id</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.ReturnDocument(LISY.Entities.Requests.Librarian.Put.ReturnDocumentRequest)">
+            <summary>
+            Returns given document from patron to library
+            </summary>
+            <param name="request">Document and patron ids</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddLibrarian(LISY.Entities.Requests.Librarian.Post.AddLibrarianRequest)">
+            <summary>
+            Adds given librarian to database
+            </summary>
+            <param name="request">Librarian and its credentials</param>
+            <returns>Is added successful</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddFaculty(LISY.Entities.Requests.Librarian.Post.AddFacultyRequest)">
+            <summary>
+            Adds given faculty to database
+            </summary>
+            <param name="request">Faculty and its credentials</param>
+            <returns>Is added successful</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddStudent(LISY.Entities.Requests.Librarian.Post.AddStudentRequest)">
+            <summary>
+            Adds given student to database
+            </summary>
+            <param name="request">Student and its credentials</param>
+            <returns>Is added successful</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddGuest(LISY.Entities.Requests.Librarian.Post.AddGuestRequest)">
+            <summary>
+            Adds given guest to database
+            </summary>
+            <param name="request">Guest and its credentials</param>
+            <returns>Is added successful</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditLibrarian(LISY.Entities.Users.Librarian)">
+            <summary>
+            Edits given librarian in database
+            </summary>
+            <param name="librarian">Given librarian</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditFaculty(LISY.Entities.Users.Patrons.Faculty)">
+            <summary>
+            Edits given faculty in database
+            </summary>
+            <param name="faculty">Given faculty</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditStudent(LISY.Entities.Users.Patrons.Student)">
+            <summary>
+            Edits given student in database
+            </summary>
+            <param name="student">Given student</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.EditGuest(LISY.Entities.Users.Patrons.Guest)">
+            <summary>
+            Edit given guest in database
+            </summary>
+            <param name="guest">Given guest</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetUserById(System.Int64)">
+            <summary>
+            Gets user by given user id
+            </summary>
+            <param name="userId">Given user id</param>
+            <returns>User</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetPatronById(System.Int64)">
+            <summary>
+            Gets patron by given patron id
+            </summary>
+            <param name="patronId">Given patron id</param>
+            <returns>Patron</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetTakableById(System.Int64)">
+            <summary>
+            Get takable by given takable id
+            </summary>
+            <param name="takableId">Given takable id</param>
+            <returns>Takable</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.DeleteUser(LISY.Entities.Requests.DeleteUserRequest)">
+            <summary>
+            Deletes user by given user id
+            </summary>
+            <param name="request">Given user id</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetAllUsersList">
+            <summary>
+            Gets list of all users
+            </summary>
+            <returns>List of all users</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddCopies(LISY.Entities.Requests.Librarian.Post.AddCopiesRequest)">
+            <summary>
+            Adds given copy to database
+            </summary>
+            <param name="request">Given copy</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.DeleteCopy(LISY.Entities.Requests.Librarian.Delete.DeleteDocumentRequest)">
+            <summary>
+            Deletes given copy from database
+            </summary>
+            <param name="request">Given copy</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetCheckedOutCopiesList">
+            <summary>
+            Gets checked out copies list
+            </summary>
+            <returns>List of checked copies</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetAllCopiesList">
+            <summary>
+            Gets list of all copies
+            </summary>
+            <returns>List of all copies</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetNumberOfCopies">
+            <summary>
+            Gets number of copies
+            </summary>
+            <returns>Number of copies</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.ClearAll">
+            <summary>
+            Clears the database
+            </summary>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetAllAVMaterialsList">
+            <summary>
+            Gets list of all av materials
+            </summary>
+            <returns>List of all av materials</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetAllBooksList">
+            <summary>
+            Gets list of all books
+            </summary>
+            <returns>List of all books</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetNumberOfDocuments">
+            <summary>
+            Gets number of documents
+            </summary>
+            <returns>Number of documents</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetNumberOfUsers">
+            <summary>
+            Gets number of users
+            </summary>
+            <returns>Number of users</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetAllInnerMaterialsList">
+            <summary>
+            Gets list of all inner materials
+            </summary>
+            <returns>List of all inner materials</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetAllJournalsList">
+            <summary>
+            Gets list of all journals
+            </summary>
+            <returns>List of all journals</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetAllArticlesList">
+            <summary>
+            Gets list of all articles
+            </summary>
+            <returns>List of all articles</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetCheckedOutByPatronCopiesList(System.Int64)">
+            <summary>
+            Gets checked out by patron copies list
+            </summary>
+            <param name="userId">Patron id</param>
+            <returns>Checked out by patron copies list</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.IsAvailable(System.Int64,System.Int64)">
+            <summary>
+            Checks can current document be checked out by current patron
+            </summary>
+            <param name="documentId">Document id</param>
+            <param name="patronId">Patron id</param>
+            <returns></returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetQueueToDocument(System.Int64)">
+            <summary>
+            Gets queue to document
+            </summary>
+            <param name="documentId">Document id</param>
+            <returns>List of patrons</returns>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.DeleteQueueToDocument(LISY.Entities.Requests.Librarian.Delete.DeleteQueueToDocumentRequest)">
+            <summary>
+            Deletes queue to document
+            </summary>
+            <param name="request">Document id</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.SetOutstanding(LISY.Entities.Requests.Librarian.Put.MakeOutstandingRequest)">
+            <summary>
+            Sets state of outstanding request on given document
+            </summary>
+            <param name="request">Document id</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetFinesByPatronId(System.Int64)">
+            <summary>
+            Get list of fines of patron with given id
+            </summary>
+            <param name="patronId">Patron id</param>
+            <returns>List of fines</returns>
+        </member>
+        <member name="T:LISY.Controllers.PatronController">
+            <summary>
+            Implements all HTTP requests to patron
+            </summary>
+        </member>
+        <member name="M:LISY.Controllers.PatronController.CheckOutDocument(LISY.Entities.Requests.Patron.Put.CheckOutDocumentRequest)">
+            <summary>
+            Checks out document by given request
+            </summary>
+            <param name="request">Given request</param>
+        </member>
+        <member name="M:LISY.Controllers.PatronController.RenewCopy(LISY.Entities.Requests.Patron.Put.RenewCopyRequest)">
+            <summary>
+            Renews document by given request
+            </summary>
+            <param name="request">Given request</param>
+        </member>
+        <member name="M:LISY.Controllers.PatronController.AddToQueue(LISY.Entities.Requests.Patron.Post.AddToQueueRequest)">
+            <summary>
+            Adds patron to queue by given request
+            </summary>
+            <param name="request">Given request</param>
+        </member>
+        <member name="M:LISY.Controllers.PatronController.GetNotifications(System.Int64)">
+            <summary>
+            Gets notifications of patron with given patron id
+            </summary>
+            <param name="patronId">Given patron id</param>
+            <returns>List of notifications</returns>
+        </member>
+        <member name="M:LISY.Controllers.PatronController.ReadNotification(LISY.Entities.Requests.Patron.Put.ReadNotificationRequest)">
+            <summary>
+            Sets given notification as checked by given patron
+            </summary>
+            <param name="request">Given request</param>
+        </member>
+        <member name="T:LISY.DataManagers.CredentialsDataManager">
+            <summary>
+            Cr
+            </summary>
+        </member>
+        <member name="T:LISY.DataManagers.DocumentsDataManager">
+            <summary>
+            Contatins all functions for document to work with database
+            </summary>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.AddAVMaterial(LISY.Entities.Documents.AVMaterial)">
+            <summary>
+            Adds AV material to database
+            </summary>
+            <param name="avMaterial">Information about AV material</param>
+            <returns>Document id</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.AddBook(LISY.Entities.Documents.Book)">
+            <summary>
+            Adds book to database
+            </summary>
+            <param name="book">Information about book</param>
+            <returns>Document id</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.AddInnerMaterial(LISY.Entities.Documents.InnerMaterial)">
+            <summary>
+            Adds inner material to database
+            </summary>
+            <param name="innerMaterial">Information about inner material</param>
+            <returns>Document id</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.AddJournal(LISY.Entities.Documents.Journal)">
+            <summary>
+            Adds journal to database
+            </summary>
+            <param name="journal">Information about journal</param>
+            <returns>Document id</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.AddArticle(LISY.Entities.Documents.Article)">
+            <summary>
+            Adds article to database
+            </summary>
+            <param name="article">Information about article</param>
+            <returns>Document id</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.EditAVMaterial(LISY.Entities.Documents.AVMaterial)">
+            <summary>
+            Edits av material in database
+            </summary>
+            <param name="avMaterial">Information about edited av material</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.EditBook(LISY.Entities.Documents.Book)">
+            <summary>
+            Edits book in database
+            </summary>
+            <param name="book">Information about edited book</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.EditInnerMaterial(LISY.Entities.Documents.InnerMaterial)">
+            <summary>
+            Edits inner material in database
+            </summary>
+            <param name="innerMaterial">Information about edited inner material</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.EditJournal(LISY.Entities.Documents.Journal)">
+            <summary>
+            Edits journal in database
+            </summary>
+            <param name="journal">Information about edited journal</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.EditArticle(LISY.Entities.Documents.Article)">
+            <summary>
+            Edits article in database
+            </summary>
+            <param name="article">Information about edited article</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.DeleteDocument(System.Int64)">
+            <summary>
+            Deletes document from database
+            </summary>
+            <param name="id">Id of document that will be deleted</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.CheckOutDocument(System.Int64,System.Int64)">
+            <summary>
+            Check out document in database
+            </summary>
+            <param name="documentId">Id of document that will be checked out</param>
+            <param name="patronId">Id of patron that checks out the document</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.ReturnDocument(System.Int64,System.Int64)">
+            <summary>
+            Returns document in the database
+            </summary>
+            <param name="documentId">Id of document that will be returned</param>
+            <param name="patronId">Id of patron that returns the document</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.IsAvailable(System.Int64,System.Int64)">
+            <summary>
+            Checks can current document be checked out by current patron
+            </summary>
+            <param name="documentID">Id of checking document</param>
+            <param name="patronID">Id of checking patron</param>
+            <returns></returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetType(System.Int64)">
+            <summary>
+            Gets type of document with given document id
+            </summary>
+            <param name="documentId">Given document id</param>
+            <returns></returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetCopyId(LISY.Entities.Documents.Copy)">
+            <summary>
+            Gets copy id by document id, room and level of given copy
+            </summary>
+            <param name="copy">Given copy</param>
+            <returns>Copy id</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.DeleteCopy(System.Int64)">
+            <summary>
+            Deletes copy by given copy id
+            </summary>
+            <param name="id">Given copy id</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetNumberOfDocuments">
+            <summary>
+            Gets number of documents in the database
+            </summary>
+            <returns>Number of documents in the database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetNumberOfCopies">
+            <summary>
+            Gets number of copies in the database
+            </summary>
+            <returns>Number of copies in the database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.AddCopies(System.Int32,LISY.Entities.Documents.Copy)">
+            <summary>
+            Adds <code>number</code> amount of copies in the database.
+            </summary>
+            <param name="number">Number of copies that will be added</param>
+            <param name="copy">Information of copies that will be added</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetAllCopiesList">
+            <summary>
+            Gets list of all copies in the database
+            </summary>
+            <returns>Array of all copies in the database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetCheckedOutCopiesList">
+            <summary>
+            Get cheked out copies list
+            </summary>
+            <returns>Array of all checked out copies</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetCopiesCheckedOutByPatron(System.Int64)">
+            <summary>
+            Gets list of all copies which are checked out by patron with given patron id
+            </summary>
+            <param name="patronId">Given patron id</param>
+            <returns></returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetAllAVMaterialsList">
+            <summary>
+            Gets list of all av materials in database
+            </summary>
+            <returns>Array of all av materials in database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetAllBooksList">
+            <summary>
+            Gets list of all books in the database
+            </summary>
+            <returns>Array of all books in database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetAllInnerMaterialsList">
+            <summary>
+            Gets list of all inner materials in database
+            </summary>
+            <returns>Array of all inner materials in database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetAllJournalsList">
+            <summary>
+            Gets list of all journals in database
+            </summary>
+            <returns>Array of all journals in database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetAllArticlesList">
+            <summary>
+            Gets list of all articles in database
+            </summary>
+            <returns>Array of all articles in database</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetDocumentId(LISY.Entities.Documents.Document)">
+            <summary>
+            Gets document id by content of given document
+            </summary>
+            <param name="document">Given document</param>
+            <returns>Document id</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.SetOutstanding(System.Boolean,System.Int64)">
+            <summary>
+            Sets state of outstanding request to given document
+            </summary>
+            <param name="state">State of outstanding request</param>
+            <param name="documentId">Given document id</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.RenewCopy(System.Int64,System.Int64)">
+            <summary>
+            Renews copy by given document id and patron id
+            </summary>
+            <param name="documentId">Given document id</param>
+            <param name="patronId">Given patron id</param>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetTakableById(System.Int64)">
+            <summary>
+            Gets takable by given takable id
+            </summary>
+            <param name="takableId">Given takable id</param>
+            <returns>Information about takable</returns>
+        </member>
+        <member name="M:LISY.DataManagers.DocumentsDataManager.GetTakableCheckedOutByPatron(System.Int64)">
+            <summary>
+            Gets takables checked out by patron with given patron id
+            </summary>
+            <param name="patronId">Given patron id</param>
+            <returns>Takables checked out by patron</returns>
+        </member>
+        <member name="T:LISY.DataManagers.UsersDataManager">
+            <summary>
+            Contains all functions for users to work with database
+            </summary>
+        </member>
+        <member name="T:LISY.Entities.Documents.Article">
+            <summary>
+            Contatins information about the article
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Article.JournalId">
+            <summary>
+            Id of journal where current article placed
+            </summary>
+        </member>
+        <member name="F:LISY.Entities.Documents.CopyWithPrice.FINE_PER_DAY">
+            <summary>
+            Fine per day.
+            </summary>
+        </member>
+        <member name="M:LISY.Entities.Documents.CopyWithPrice.CountFine">
+            <summary>
+            Counts fine for user.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

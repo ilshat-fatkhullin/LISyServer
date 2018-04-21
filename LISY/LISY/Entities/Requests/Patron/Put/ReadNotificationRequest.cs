@@ -2,6 +2,7 @@
 {
     public class ReadNotificationRequest
     {
+        public long PatronId { get; set; }
         public long Id { get; set; }
     }
 }

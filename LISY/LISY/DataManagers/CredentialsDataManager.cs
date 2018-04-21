@@ -1,10 +1,11 @@
-﻿using LISY.Entities.Users;
-using LISY.Helpers;
-using System;
+﻿using LISY.Helpers;
 using System.Linq;
 
 namespace LISY.DataManagers
 {
+    /// <summary>
+    /// Cr
+    /// </summary>
     public class CredentialsDataManager
     {
         public static long Authorize(string login, string password)

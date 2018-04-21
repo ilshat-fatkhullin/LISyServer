@@ -9,6 +9,9 @@ using System.Linq;
 
 namespace LISY.DataManagers
 {
+    /// <summary>
+    /// Contains all functions for users to work with database
+    /// </summary>
     public static class UsersDataManager
     {
         private static bool IsUserInTable(User user)

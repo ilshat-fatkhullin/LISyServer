@@ -7,6 +7,7 @@ namespace LISY.Entities.Requests
 {
     public class DeleteUserRequest
     {
+        public int LibrarianId { get; set; }
         public long UserId { get; set; }
     }
 }

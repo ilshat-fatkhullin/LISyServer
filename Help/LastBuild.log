@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2017.12.30.2" projectFile="C:\Repositories\LISyServer\Documentation.shfbproj" started="09.04.2018 22:13:57">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+Locating components in the following folder(s):
+    C:\Repositories\LISyServer
+    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins\
+    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\
+Using framework reflection data for &#39;.NET Framework 4.5&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2017.12.30.2
+Copyright &#169; 2006-2017, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: C:\Repositories\LISyServer\LISY\LISY\bin\Debug\netcoreapp2.0\LISY.dll
+    Found assembly &#39;C:\Repositories\LISyServer\LISY\LISY\bin\Debug\netcoreapp2.0\LISY.dll&#39;
+Source: C:\Repositories\LISyServer\LISY\LISY\bin\Debug\netcoreapp2.0\LISY.xml
+
+Copying XML comments files
+    C:\Repositories\LISyServer\LISY\LISY\bin\Debug\netcoreapp2.0\LISY.xml -&gt; C:\Repositories\LISyServer\Help\Working\LISY.xml
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, Английский (США))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00,0420
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00,0100
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - GenerateRefInfo.proj]
+‘Ў&#174;аЄ&#160; &#173;&#160;з&#160;в&#160; 09.04.2018 22:14:00.
+–Ґ&#171;Ґў&#174;&#169; &#174;ЎкҐЄв &quot;_ConvertPdbFiles&quot;, гЄ&#160;&#167;&#160;&#173;&#173;л&#169; ў &#160;ваЁЎгвҐ BeforeTargets &#164;&#171;п &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (45,37)&quot;, &#173;Ґ бгйҐбвўгҐв ў Їа&#174;ҐЄвҐ Ё Ўг&#164;Ґв Їа&#174;ЇгйҐ&#173;.
+–Ґ&#171;Ґў&#174;&#169; &#174;ЎкҐЄв &quot;_CollectPdbFiles&quot;, гЄ&#160;&#167;&#160;&#173;&#173;л&#169; ў &#160;ваЁЎгвҐ AfterTargets &#164;&#171;п &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (45,70)&quot;, &#173;Ґ бгйҐбвўгҐв ў Їа&#174;ҐЄвҐ Ё Ўг&#164;Ґв Їа&#174;ЇгйҐ&#173;.
+–Ґ&#171;Ґў&#174;&#169; &#174;ЎкҐЄв &quot;_CollectMdbFiles&quot;, гЄ&#160;&#167;&#160;&#173;&#173;л&#169; ў &#160;ваЁЎгвҐ BeforeTargets &#164;&#171;п &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (52,38)&quot;, &#173;Ґ бгйҐбвўгҐв ў Їа&#174;ҐЄвҐ Ё Ўг&#164;Ґв Їа&#174;ЇгйҐ&#173;.
+–Ґ&#171;Ґў&#174;&#169; &#174;ЎкҐЄв &quot;_CopyMdbFiles&quot;, гЄ&#160;&#167;&#160;&#173;&#173;л&#169; ў &#160;ваЁЎгвҐ AfterTargets &#164;&#171;п &quot;C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (52,71)&quot;, &#173;Ґ бгйҐбвўгҐв ў Їа&#174;ҐЄвҐ Ё Ўг&#164;Ґв Їа&#174;ЇгйҐ&#173;.
+Џа&#174;ҐЄв &quot;C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+PrepareForBuild:
+  ‘&#174;&#167;&#164;&#160;&#173;ЁҐ Є&#160;в&#160;&#171;&#174;Ј&#160; &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2017.12.30.2)
+  Copyright c 2006-2017, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  No source code context base path specified.  Source context information is unavailable.
+  Loaded 1 assemblies for reflection and 1 dependency assemblies.
+MRefBuilder : warning : Ignoring unresolved assembly reference: Microsoft.AspNetCore.Mvc.ViewFeatures (Microsoft.AspNetCore.Mvc.ViewFeatures, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60) required by LISY [C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: System.Diagnostics.Debug (System.Diagnostics.Debug, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) required by LISY [C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: Microsoft.AspNetCore.Hosting.Abstractions (Microsoft.AspNetCore.Hosting.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60) required by LISY [C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: Microsoft.Extensions.Configuration.Abstractions (Microsoft.Extensions.Configuration.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60) required by LISY [C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: Microsoft.Extensions.DependencyInjection.Abstractions (Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60) required by LISY [C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: Microsoft.AspNetCore.Http.Abstractions (Microsoft.AspNetCore.Http.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60) required by LISY [C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj]
+MRefBuilder : warning : Ignoring unresolved assembly reference: Microsoft.AspNetCore.Mvc.Core (Microsoft.AspNetCore.Mvc.Core, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60) required by LISY [C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj]
+  Wrote information on 15 namespaces, 46 types, and 251 members
+  Љ&#174;ЇЁа&#174;ў&#160;&#173;ЁҐ д&#160;&#169;&#171;&#160; Ё&#167; &quot;reflection.org&quot; ў &quot;reflection.all&quot;.
+  XslTransform (v2017.12.30.2)
+  Copyright c 2006-2017, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+‘Ў&#174;аЄ&#160; Їа&#174;ҐЄв&#160; &quot;C:\Repositories\LISyServer\Help\Working\GenerateRefInfo.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#160; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+‘Ў&#174;аЄ&#160; гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#160;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:07.94
+    Last step completed in 00:00:08,5564
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - TransformManifest.proj]
+‘Ў&#174;аЄ&#160; &#173;&#160;з&#160;в&#160; 09.04.2018 22:14:08.
+Џа&#174;ҐЄв &quot;C:\Repositories\LISyServer\Help\Working\TransformManifest.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+TransformManifest:
+  XslTransform (v2017.12.30.2)
+  Copyright c 2006-2017, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Љ&#174;ЇЁа&#174;ў&#160;&#173;ЁҐ д&#160;&#169;&#171;&#160; Ё&#167; &quot;reflection.xml&quot; ў &quot;reflection.nofilenames&quot;.
+  XslTransform (v2017.12.30.2)
+  Copyright c 2006-2017, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+  XslTransform (v2017.12.30.2)
+  Copyright c 2006-2017, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+‘Ў&#174;аЄ&#160; Їа&#174;ҐЄв&#160; &quot;C:\Repositories\LISyServer\Help\Working\TransformManifest.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#160; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+‘Ў&#174;аЄ&#160; гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#160;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:01.35
+    Last step completed in 00:00:01,7501
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00,0365
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - GenerateIntermediateTOC.proj]
+‘Ў&#174;аЄ&#160; &#173;&#160;з&#160;в&#160; 09.04.2018 22:14:10.
+Џа&#174;ҐЄв &quot;C:\Repositories\LISyServer\Help\Working\GenerateIntermediateTOC.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+GenerateIntermediateTOC:
+  XslTransform (v2017.12.30.2)
+  Copyright c 2006-2017, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+‘Ў&#174;аЄ&#160; Їа&#174;ҐЄв&#160; &quot;C:\Repositories\LISyServer\Help\Working\GenerateIntermediateTOC.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#160; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+‘Ў&#174;аЄ&#160; гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#160;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:00.30
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00,6435
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00,3511
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+C:\Repositories\LISyServer\Help\Working\sandcastle.config
+  Updating reference topic configurations.
+  No conceptual content.  Removing conceptual content components.
+    Last step completed in 00:00:00,0400
+</buildStep>
+<buildStep step="BuildTopics">
+Building help topics...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - BuildTopics.proj]
+‘Ў&#174;аЄ&#160; &#173;&#160;з&#160;в&#160; 09.04.2018 22:14:11.
+Џа&#174;ҐЄв &quot;C:\Repositories\LISyServer\Help\Working\BuildTopics.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+BuildTopics:
+  BuildAssembler (v2017.12.30.2)
+  Copyright c 2006-2017, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2016, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ShowMissingComponent: [N:LISY] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Program] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Program.BuildWebHost(System.String[])] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Program.BuildWebHost(System.String[])] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Program.BuildWebHost(System.String[])] Missing &lt;param name=&quot;args&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:LISY.Program.BuildWebHost(System.String[])] MSDN URL not found for target &#39;T:Microsoft.AspNetCore.Hosting.IWebHost&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Program.Main(System.String[])] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Program.Main(System.String[])] Missing &lt;param name=&quot;args&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Startup] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)] Missing &lt;param name=&quot;configuration&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:LISY.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)] MSDN URL not found for target &#39;T:Microsoft.Extensions.Configuration.IConfiguration&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Startup.Configuration] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [P:LISY.Startup.Configuration] MSDN URL not found for target &#39;T:Microsoft.Extensions.Configuration.IConfiguration&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)] Missing &lt;param name=&quot;app&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)] Missing &lt;param name=&quot;env&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:LISY.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)] MSDN URL not found for target &#39;T:Microsoft.AspNetCore.Builder.IApplicationBuilder&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:LISY.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)] MSDN URL not found for target &#39;T:Microsoft.AspNetCore.Hosting.IHostingEnvironment&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)] Missing &lt;param name=&quot;services&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:LISY.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)] MSDN URL not found for target &#39;T:Microsoft.Extensions.DependencyInjection.IServiceCollection&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Controllers] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:LISY.Controllers.CredentialsController] MSDN URL not found for target &#39;T:Microsoft.AspNetCore.Mvc.Controller&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:LISY.Controllers.DatabaseController] MSDN URL not found for target &#39;T:Microsoft.AspNetCore.Mvc.Controller&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:LISY.Controllers.LibrarianController] MSDN URL not found for target &#39;T:Microsoft.AspNetCore.Mvc.Controller&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Controllers.LibrarianController.IsAvailable(System.Int64,System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:LISY.Controllers.PatronController] MSDN URL not found for target &#39;T:Microsoft.AspNetCore.Mvc.Controller&#39;. [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.DataManagers] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.AddUserCredentials(System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.AddUserCredentials(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.AddUserCredentials(System.String,System.String)] Missing &lt;param name=&quot;login&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.AddUserCredentials(System.String,System.String)] Missing &lt;param name=&quot;password&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.Authorize(System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.Authorize(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.Authorize(System.String,System.String)] Missing &lt;param name=&quot;login&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.Authorize(System.String,System.String)] Missing &lt;param name=&quot;password&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.DeleteUserCredentials(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.DeleteUserCredentials(System.Int64)] Missing &lt;param name=&quot;userId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.EditUserCredentials(System.Int64,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.EditUserCredentials(System.Int64,System.String)] Missing &lt;param name=&quot;userId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.CredentialsDataManager.EditUserCredentials(System.Int64,System.String)] Missing &lt;param name=&quot;password&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.DataManagers.DatabaseDataManager] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.DatabaseDataManager.ClearAll] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.DocumentsDataManager.GetCopiesCheckedOutByPatron(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.DocumentsDataManager.GetType(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.DocumentsDataManager.IsAvailable(System.Int64,System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.DataManagers.NotificationsDataManager] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.NotificationsDataManager.AddNotification(LISY.Entities.Notifications.Notification)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.NotificationsDataManager.AddNotification(LISY.Entities.Notifications.Notification)] Missing &lt;param name=&quot;notification&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.NotificationsDataManager.GetNotificationsByPatron(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.NotificationsDataManager.GetNotificationsByPatron(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.NotificationsDataManager.GetNotificationsByPatron(System.Int64)] Missing &lt;param name=&quot;patronId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.NotificationsDataManager.ReadNotification(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.NotificationsDataManager.ReadNotification(System.Int64)] Missing &lt;param name=&quot;notificationId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddFaculty(LISY.Entities.Users.Patrons.Faculty,System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddFaculty(LISY.Entities.Users.Patrons.Faculty,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddFaculty(LISY.Entities.Users.Patrons.Faculty,System.String,System.String)] Missing &lt;param name=&quot;faculty&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddFaculty(LISY.Entities.Users.Patrons.Faculty,System.String,System.String)] Missing &lt;param name=&quot;login&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddFaculty(LISY.Entities.Users.Patrons.Faculty,System.String,System.String)] Missing &lt;param name=&quot;password&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddGuest(LISY.Entities.Users.Patrons.Guest,System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddGuest(LISY.Entities.Users.Patrons.Guest,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddGuest(LISY.Entities.Users.Patrons.Guest,System.String,System.String)] Missing &lt;param name=&quot;guest&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddGuest(LISY.Entities.Users.Patrons.Guest,System.String,System.String)] Missing &lt;param name=&quot;login&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddGuest(LISY.Entities.Users.Patrons.Guest,System.String,System.String)] Missing &lt;param name=&quot;password&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddLibrarian(LISY.Entities.Users.Librarian,System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddLibrarian(LISY.Entities.Users.Librarian,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddLibrarian(LISY.Entities.Users.Librarian,System.String,System.String)] Missing &lt;param name=&quot;librarian&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddLibrarian(LISY.Entities.Users.Librarian,System.String,System.String)] Missing &lt;param name=&quot;login&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddLibrarian(LISY.Entities.Users.Librarian,System.String,System.String)] Missing &lt;param name=&quot;password&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddStudent(LISY.Entities.Users.Patrons.Student,System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddStudent(LISY.Entities.Users.Patrons.Student,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddStudent(LISY.Entities.Users.Patrons.Student,System.String,System.String)] Missing &lt;param name=&quot;student&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddStudent(LISY.Entities.Users.Patrons.Student,System.String,System.String)] Missing &lt;param name=&quot;login&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddStudent(LISY.Entities.Users.Patrons.Student,System.String,System.String)] Missing &lt;param name=&quot;password&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddToQueue(System.Int64,System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddToQueue(System.Int64,System.Int64)] Missing &lt;param name=&quot;documentId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.AddToQueue(System.Int64,System.Int64)] Missing &lt;param name=&quot;patronId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.DeleteQueueToDocument(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.DeleteQueueToDocument(System.Int64)] Missing &lt;param name=&quot;documentId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.DeleteUser(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.DeleteUser(System.Int64)] Missing &lt;param name=&quot;userId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditFaculty(LISY.Entities.Users.Patrons.Faculty)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditFaculty(LISY.Entities.Users.Patrons.Faculty)] Missing &lt;param name=&quot;faculty&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditGuest(LISY.Entities.Users.Patrons.Guest)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditGuest(LISY.Entities.Users.Patrons.Guest)] Missing &lt;param name=&quot;guest&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditLibrarian(LISY.Entities.Users.Librarian)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditLibrarian(LISY.Entities.Users.Librarian)] Missing &lt;param name=&quot;librarian&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditStudent(LISY.Entities.Users.Patrons.Student)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.EditStudent(LISY.Entities.Users.Patrons.Student)] Missing &lt;param name=&quot;student&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetFinesByPatronId(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetFinesByPatronId(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetFinesByPatronId(System.Int64)] Missing &lt;param name=&quot;patronId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetNumberOfUsers] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetNumberOfUsers] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronById(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronById(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronById(System.Int64)] Missing &lt;param name=&quot;patronId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronsCheckedByDocumentId(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronsCheckedByDocumentId(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronsCheckedByDocumentId(System.Int64)] Missing &lt;param name=&quot;documentId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronType(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronType(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetPatronType(System.Int64)] Missing &lt;param name=&quot;patronId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetQueueToDocument(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetQueueToDocument(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetQueueToDocument(System.Int64)] Missing &lt;param name=&quot;documentId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetUserById(System.Int64)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetUserById(System.Int64)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetUserById(System.Int64)] Missing &lt;param name=&quot;userId&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetUsersList] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.DataManagers.UsersDataManager.GetUsersList] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Documents] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.AVMaterial] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.Book] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Book.Edition] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Book.EvaluateReturnDate(System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Book.EvaluateReturnDate(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Book.EvaluateReturnDate(System.String,System.String)] Missing &lt;param name=&quot;dateString&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Book.EvaluateReturnDate(System.String,System.String)] Missing &lt;param name=&quot;patronType&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Documents.Book.FACULTY_RETURN_TIME] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Book.IsBestseller] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Book.Price] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Book.Publisher] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Documents.Book.STUDENT_BESTSELLER_RETURN_TIME] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Documents.Book.STUDENT_RETURN_TIME] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Book.Year] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.Copy] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.Checked] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.Id] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.IsRenewed] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.Level] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.PatronId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.ReturningDate] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Copy.Room] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.CopyWithPrice] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.CopyWithPrice.CountFine] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.CopyWithPrice.Price] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.Document] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Document.Authors] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Document.CoverURL] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Document.Id] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Document.KeyWords] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Document.Title] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.InnerMaterial] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.InnerMaterial.Level] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.InnerMaterial.Room] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.InnerMaterial.Type] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.Journal] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Journal.Issue] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Journal.Price] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Journal.PublicationDate] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Journal.Publisher] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Documents.Takable] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Documents.Takable.BASIC_RETURN_TIME] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Takable.EvaluateReturnDate(System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Takable.EvaluateReturnDate(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Takable.EvaluateReturnDate(System.String,System.String)] Missing &lt;param name=&quot;dateString&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Entities.Documents.Takable.EvaluateReturnDate(System.String,System.String)] Missing &lt;param name=&quot;patronType&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Documents.Takable.GUEST_RETURN_TIME] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Takable.IsOutstanding] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Documents.Takable.Price] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Fines] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Fines.Fine] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Fines.Fine.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Fines.Fine.FineAmount] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Fines.Fine.PatronId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Notifications] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Notifications.Notification] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Notifications.Notification.Checked] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Notifications.Notification.Id] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Notifications.Notification.Message] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Notifications.Notification.PatronId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Requests] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.DeleteUserRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.DeleteUserRequest.UserId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Requests.Librarian.Delete] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Delete.DeleteCopyRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Delete.DeleteCopyRequest.Id] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Delete.DeleteDocumentRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Delete.DeleteDocumentRequest.Id] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Delete.DeleteQueueToDocumentRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Delete.DeleteQueueToDocumentRequest.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Requests.Librarian.Post] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Post.AddCopiesRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddCopiesRequest.Copy] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddCopiesRequest.N] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Post.AddFacultyRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddFacultyRequest.Faculty] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Post.AddGuestRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddGuestRequest.Guest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Post.AddLibrarianRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddLibrarianRequest.Librarian] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Post.AddStudentRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddStudentRequest.Student] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Post.AddUserRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddUserRequest.Login] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Post.AddUserRequest.Password] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Requests.Librarian.Put] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Put.EditUserCredentialsRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Put.EditUserCredentialsRequest.Password] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Put.EditUserCredentialsRequest.UserId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Put.MakeOutstandingRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Put.MakeOutstandingRequest.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Put.MakeOutstandingRequest.State] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Librarian.Put.ReturnDocumentRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Put.ReturnDocumentRequest.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Librarian.Put.ReturnDocumentRequest.UserId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Requests.Patron.Post] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Patron.Post.AddToQueueRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Patron.Post.AddToQueueRequest.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Patron.Post.AddToQueueRequest.PatronId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Requests.Patron.Put] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Patron.Put.CheckOutDocumentRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Patron.Put.CheckOutDocumentRequest.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Patron.Put.CheckOutDocumentRequest.UserId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Patron.Put.ReadNotificationRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Patron.Put.ReadNotificationRequest.Id] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Requests.Patron.Put.RenewCopyRequest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Patron.Put.RenewCopyRequest.DocumentId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Requests.Patron.Put.RenewCopyRequest.PatronId] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Users] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Users.Librarian] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Librarian.TYPE] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Users.Patron] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Users.Patron.Priority] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Users.User] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Users.User.Address] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Users.User.CardNumber] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Users.User.FirstName] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Users.User.Phone] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Users.User.SecondName] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [P:LISY.Entities.Users.User.Type] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Entities.Users.Patrons] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Users.Patrons.Faculty] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Faculty.INSTRUCTOR_PRIORITY] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Faculty.INSTRUCTOR_SUBTYPE] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Faculty.PROFESSOR_PRIORITY] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Faculty.PROFESSOR_SUBTYPE] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Faculty.TA_PRIORITY] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Faculty.TA_SUBTYPE] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Faculty.TYPE] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Users.Patrons.Guest] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Guest.PRIORITY] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Guest.TYPE] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Entities.Users.Patrons.Student] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Student.PRIORITY] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:LISY.Entities.Users.Patrons.Student.TYPE] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [N:LISY.Helpers] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:LISY.Helpers.DatabaseHelper] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Execute(System.String,System.Object)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Execute(System.String,System.Object)] Missing &lt;param name=&quot;command&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Execute(System.String,System.Object)] Missing &lt;param name=&quot;obj&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Query``1(System.String,System.Object)] Missing &lt;summary&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Query``1(System.String,System.Object)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Query``1(System.String,System.Object)] Missing &lt;returns&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Query``1(System.String,System.Object)] Missing &lt;param name=&quot;command&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:LISY.Helpers.DatabaseHelper.Query``1(System.String,System.Object)] Missing &lt;param name=&quot;obj&quot;/&gt; documentation [C:\Repositories\LISyServer\Help\Working\BuildTopics.proj]
+  Processed 400 topic(s)
+  258 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 3 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
+‘Ў&#174;аЄ&#160; Їа&#174;ҐЄв&#160; &quot;C:\Repositories\LISyServer\Help\Working\BuildTopics.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#160; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+‘Ў&#174;аЄ&#160; гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#160;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:12.85
+    Last step completed in 00:00:13,1845
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00,0060
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - ExtractHtmlInfo.proj]
+Sandcastle Help File Builder and Tools, version 2017.12.30.2
+Copyright c 2006-2017, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing Help 1 files in C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1
+Processed 400 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to C:\Repositories\LISyServer\Help\Working\Documentation.hhk
+Saving HTML Help 1 table of contents to C:\Repositories\LISyServer\Help\Working\Documentation.hhc
+    Last step completed in 00:00:01,1481
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00,5250
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00,0010
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00,0270
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Program Files (x86)\MSBuild\14.0\bin\amd64\MSBuild.exe - Build1xHelpFile.proj]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling c:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\Documentation.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 12 seconds
+  
+  402	Topics
+  
+  4,324	Local links
+  
+  1,161	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created c:\Repositories\LISyServer\Help\Working\Output\HtmlHelp1\Documentation.chm, 438,429 bytes
+  
+  Compression decreased file by 2,706,627 bytes.
+  
+    Last step completed in 00:00:15,1660
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00,5130
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 09.04.2018 22:14:41.  Total time: 00:00:44,3655
+
+</buildStep>
+</shfbBuild>
