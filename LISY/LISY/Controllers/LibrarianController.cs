@@ -1,6 +1,7 @@
 ﻿using LISY.DataManagers;
 using LISY.Entities.Documents;
 using LISY.Entities.Fines;
+using LISY.Entities.Notifications;
 using LISY.Entities.Requests;
 using LISY.Entities.Requests.Librarian.Delete;
 using LISY.Entities.Requests.Librarian.Post;
@@ -616,6 +617,13 @@ namespace LISY.Controllers
         public Fine[] GetFinesByPatronId(long patronId)
         {
             return UsersDataManager.GetFinesByPatronId(patronId);
+        }
+
+        [Route("get_all_logs")]
+        [HttpGet]
+        public LogContent[] GetAllLogs()
+        {
+            return LogsDataManager.GetAllLogs();
         }
     }
 }

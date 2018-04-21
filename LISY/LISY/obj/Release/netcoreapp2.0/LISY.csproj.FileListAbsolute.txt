@@ -8,3 +8,4 @@ C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.AssemblyInfo
 C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.AssemblyInfo.cs
 C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.dll
 C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.pdb
+C:\Repositories\LISyServer\LISY\LISY\obj\Release\netcoreapp2.0\LISY.csprojResolveAssemblyReference.cache

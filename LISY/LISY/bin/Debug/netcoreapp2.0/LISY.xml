@@ -38,66 +38,66 @@
             Implements all HTTP requests to librarian
             </summary>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.AddArticle(LISY.Entities.Documents.Article)">
+        <member name="M:LISY.Controllers.LibrarianController.AddArticle(LISY.Entities.Requests.Librarian.Post.ArticleRequest)">
             <summary>
             Adds given article to database
             </summary>
             <param name="article">Given article</param>
             <returns>Id of added article</returns>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.AddAVMaterial(LISY.Entities.Documents.AVMaterial)">
+        <member name="M:LISY.Controllers.LibrarianController.AddAVMaterial(LISY.Entities.Requests.Librarian.Post.AVMaterialRequest)">
             <summary>
             Adds given AV material to database
             </summary>
             <param name="avMaterial">Given AV material</param>
             <returns>Id of added AV material</returns>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.AddBook(LISY.Entities.Documents.Book)">
+        <member name="M:LISY.Controllers.LibrarianController.AddBook(LISY.Entities.Requests.Librarian.Post.BookRequest)">
             <summary>
             Adds given bool to database
             </summary>
             <param name="book">Given book</param>
             <returns>Id of added book</returns>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.AddInnerMaterial(LISY.Entities.Documents.InnerMaterial)">
+        <member name="M:LISY.Controllers.LibrarianController.AddInnerMaterial(LISY.Entities.Requests.Librarian.Post.InnerMaterialRequest)">
             <summary>
             Adds given inner material to database
             </summary>
             <param name="innerMaterial">Given inner material</param>
             <returns>Id of added inner material</returns>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.AddJournal(LISY.Entities.Documents.Journal)">
+        <member name="M:LISY.Controllers.LibrarianController.AddJournal(LISY.Entities.Requests.Librarian.Post.JournalRequest)">
             <summary>
             Adds given journal to database
             </summary>
             <param name="journal">Given journal</param>
             <returns>Id of added journal</returns>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditArticle(LISY.Entities.Documents.Article)">
+        <member name="M:LISY.Controllers.LibrarianController.EditArticle(LISY.Entities.Requests.Librarian.Post.ArticleRequest)">
             <summary>
             Edits given article in database
             </summary>
             <param name="article">Given article</param>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditAVMaterial(LISY.Entities.Documents.AVMaterial)">
+        <member name="M:LISY.Controllers.LibrarianController.EditAVMaterial(LISY.Entities.Requests.Librarian.Post.AVMaterialRequest)">
             <summary>
             Edits given AV material in database
             </summary>
             <param name="avMaterial">Given AV material</param>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditBook(LISY.Entities.Documents.Book)">
+        <member name="M:LISY.Controllers.LibrarianController.EditBook(LISY.Entities.Requests.Librarian.Post.BookRequest)">
             <summary>
             Edits given book in database
             </summary>
             <param name="book">Given book</param>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditInnerMaterial(LISY.Entities.Documents.InnerMaterial)">
+        <member name="M:LISY.Controllers.LibrarianController.EditInnerMaterial(LISY.Entities.Requests.Librarian.Post.InnerMaterialRequest)">
             <summary>
             Edits given inner material in database
             </summary>
             <param name="innerMaterial">Given inner material</param>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditJournal(LISY.Entities.Documents.Journal)">
+        <member name="M:LISY.Controllers.LibrarianController.EditJournal(LISY.Entities.Requests.Librarian.Post.JournalRequest)">
             <summary>
             Edits given journal in database
             </summary>
@@ -149,23 +149,53 @@
             </summary>
             <param name="librarian">Given librarian</param>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditFaculty(LISY.Entities.Users.Patrons.Faculty)">
+        <member name="M:LISY.Controllers.LibrarianController.EditFaculty(LISY.Entities.Requests.Librarian.Put.EditFacultyRequest)">
             <summary>
             Edits given faculty in database
             </summary>
             <param name="faculty">Given faculty</param>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditStudent(LISY.Entities.Users.Patrons.Student)">
+        <member name="M:LISY.Controllers.LibrarianController.EditStudent(LISY.Entities.Requests.Librarian.Put.EditStudentRequest)">
             <summary>
             Edits given student in database
             </summary>
             <param name="student">Given student</param>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.EditGuest(LISY.Entities.Users.Patrons.Guest)">
+        <member name="M:LISY.Controllers.LibrarianController.EditGuest(LISY.Entities.Requests.Librarian.Put.EditGuestRequest)">
             <summary>
             Edit given guest in database
             </summary>
             <param name="guest">Given guest</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.DeleteUser(LISY.Entities.Requests.DeleteUserRequest)">
+            <summary>
+            Deletes user by given user id
+            </summary>
+            <param name="request">Given user id</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.AddCopies(LISY.Entities.Requests.Librarian.Post.AddCopiesRequest)">
+            <summary>
+            Adds given copy to database
+            </summary>
+            <param name="request">Given copy</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.DeleteCopy(LISY.Entities.Requests.Librarian.Delete.DeleteDocumentRequest)">
+            <summary>
+            Deletes given copy from database
+            </summary>
+            <param name="request">Given copy</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.DeleteQueueToDocument(LISY.Entities.Requests.Librarian.Delete.DeleteQueueToDocumentRequest)">
+            <summary>
+            Deletes queue to document
+            </summary>
+            <param name="request">Document id</param>
+        </member>
+        <member name="M:LISY.Controllers.LibrarianController.SetOutstanding(LISY.Entities.Requests.Librarian.Put.MakeOutstandingRequest)">
+            <summary>
+            Sets state of outstanding request on given document
+            </summary>
+            <param name="request">Document id</param>
         </member>
         <member name="M:LISY.Controllers.LibrarianController.GetUserById(System.Int64)">
             <summary>
@@ -188,29 +218,11 @@
             <param name="takableId">Given takable id</param>
             <returns>Takable</returns>
         </member>
-        <member name="M:LISY.Controllers.LibrarianController.DeleteUser(LISY.Entities.Requests.DeleteUserRequest)">
-            <summary>
-            Deletes user by given user id
-            </summary>
-            <param name="request">Given user id</param>
-        </member>
         <member name="M:LISY.Controllers.LibrarianController.GetAllUsersList">
             <summary>
             Gets list of all users
             </summary>
             <returns>List of all users</returns>
-        </member>
-        <member name="M:LISY.Controllers.LibrarianController.AddCopies(LISY.Entities.Requests.Librarian.Post.AddCopiesRequest)">
-            <summary>
-            Adds given copy to database
-            </summary>
-            <param name="request">Given copy</param>
-        </member>
-        <member name="M:LISY.Controllers.LibrarianController.DeleteCopy(LISY.Entities.Requests.Librarian.Delete.DeleteDocumentRequest)">
-            <summary>
-            Deletes given copy from database
-            </summary>
-            <param name="request">Given copy</param>
         </member>
         <member name="M:LISY.Controllers.LibrarianController.GetCheckedOutCopiesList">
             <summary>
@@ -298,18 +310,6 @@
             </summary>
             <param name="documentId">Document id</param>
             <returns>List of patrons</returns>
-        </member>
-        <member name="M:LISY.Controllers.LibrarianController.DeleteQueueToDocument(LISY.Entities.Requests.Librarian.Delete.DeleteQueueToDocumentRequest)">
-            <summary>
-            Deletes queue to document
-            </summary>
-            <param name="request">Document id</param>
-        </member>
-        <member name="M:LISY.Controllers.LibrarianController.SetOutstanding(LISY.Entities.Requests.Librarian.Put.MakeOutstandingRequest)">
-            <summary>
-            Sets state of outstanding request on given document
-            </summary>
-            <param name="request">Document id</param>
         </member>
         <member name="M:LISY.Controllers.LibrarianController.GetFinesByPatronId(System.Int64)">
             <summary>
