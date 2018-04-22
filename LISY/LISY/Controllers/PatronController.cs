@@ -20,12 +20,12 @@ namespace LISY.Controllers
         [Route("check_out")]
         [HttpPut]
         public void CheckOutDocument([FromBody]CheckOutDocumentRequest request)
-        {
+        {            
+            DocumentsDataManager.CheckOutDocument(request.DocumentId, request.UserId);
             LogsDataManager.SendLog(
                 request.UserId,
                 "Patron",
                 "checked out document with id " + request.DocumentId);
-            DocumentsDataManager.CheckOutDocument(request.DocumentId, request.UserId);
         }
 
         /// <summary>

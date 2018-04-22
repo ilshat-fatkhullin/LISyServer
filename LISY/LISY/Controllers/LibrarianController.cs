@@ -9,6 +9,7 @@ using LISY.Entities.Requests.Librarian.Put;
 using LISY.Entities.Users;
 using LISY.Entities.Users.Patrons;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace LISY.Controllers
 {
@@ -28,6 +29,8 @@ namespace LISY.Controllers
         [HttpPost]
         public long AddArticle([FromBody]ArticleRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return 0;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -44,6 +47,8 @@ namespace LISY.Controllers
         [HttpPost]
         public long AddAVMaterial([FromBody]AVMaterialRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return 0;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -60,6 +65,8 @@ namespace LISY.Controllers
         [HttpPost]
         public long AddBook([FromBody]BookRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return 0;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -76,6 +83,8 @@ namespace LISY.Controllers
         [HttpPost]
         public long AddInnerMaterial([FromBody]InnerMaterialRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return 0;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -92,6 +101,8 @@ namespace LISY.Controllers
         [HttpPost]
         public long AddJournal([FromBody]JournalRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return 0;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -182,6 +193,8 @@ namespace LISY.Controllers
         [HttpDelete]
         public void DeleteDocument([FromBody]DeleteDocumentRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 3)
+                return;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -216,7 +229,7 @@ namespace LISY.Controllers
             LogsDataManager.SendLog(
                 1,
                 "Admin",
-                "edited article " + request.Librarian.FirstName);
+                "added librarian " + request.Librarian.FirstName);
             return UsersDataManager.AddLibrarian(request.Librarian, request.Login, request.Password);
         }
 
@@ -229,6 +242,9 @@ namespace LISY.Controllers
         [HttpPost]
         public bool AddFaculty([FromBody]AddFacultyRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return false;
+
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -245,6 +261,8 @@ namespace LISY.Controllers
         [HttpPost]
         public bool AddStudent([FromBody]AddStudentRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return false;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -261,6 +279,8 @@ namespace LISY.Controllers
         [HttpPost]
         public bool AddGuest([FromBody]AddGuestRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return false;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -336,6 +356,8 @@ namespace LISY.Controllers
         [HttpDelete]
         public void DeleteUser([FromBody]DeleteUserRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 3)
+                return;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -351,6 +373,8 @@ namespace LISY.Controllers
         [HttpPost]
         public void AddCopies([FromBody]AddCopiesRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -366,6 +390,8 @@ namespace LISY.Controllers
         [HttpDelete]
         public void DeleteCopy([FromBody]DeleteDocumentRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 3)
+                return;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -381,6 +407,8 @@ namespace LISY.Controllers
         [HttpDelete]
         public void DeleteQueueToDocument([FromBody]DeleteQueueToDocumentRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -396,6 +424,8 @@ namespace LISY.Controllers
         [HttpPut]
         public void SetOutstanding([FromBody]MakeOutstandingRequest request)
         {
+            if (GetLibrarianById(request.LibrarianId).Authority < 2)
+                return;
             LogsDataManager.SendLog(
                 request.LibrarianId,
                 "Librarian",
@@ -413,6 +443,18 @@ namespace LISY.Controllers
         public User GetUserById(long userId)
         {
             return UsersDataManager.GetUserById(userId);
+        }
+
+        /// <summary>
+        /// Gets user by given user id
+        /// </summary>
+        /// <param name="userId">Given user id</param>
+        /// <returns>User</returns>
+        [Route("get_librarian")]
+        [HttpGet]
+        public Librarian GetLibrarianById(long librarianId)
+        {
+            return UsersDataManager.GetLibrarianById(librarianId);
         }
 
         /// <summary>
@@ -624,6 +666,24 @@ namespace LISY.Controllers
         public LogContent[] GetAllLogs()
         {
             return LogsDataManager.GetAllLogs();
+        }
+
+        [Route("get_all_librarians")]
+        [HttpGet]
+        public Librarian[] GetAllLibrarians()
+        {
+            return UsersDataManager.GetLibrariansList();
+        }
+
+        [Route("set_librarian_authority")]
+        [HttpPut]
+        public void SetLibrarianAuthority(SetLibrarianAuthorityRequest request)
+        {
+            LogsDataManager.SendLog(
+                1,
+                "Admin",
+                "changed authority of librarian with id " + request.LibrarianId);
+            UsersDataManager.SetLibrarianAuthority(request.LibrarianId, request.Authority);
         }
     }
 }

@@ -595,6 +595,56 @@
             Id of journal where current article placed
             </summary>
         </member>
+        <member name="T:LISY.Entities.Documents.Copy">
+            <summary>
+            Represents physical copies of documents.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.Id">
+            <summary>
+            Id of a copy.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.DocumentId">
+            <summary>
+            Id of a document of which copy is.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.PatronId">
+            <summary>
+            Id of a patron who took copy.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.Checked">
+            <summary>
+            Denotes if copy is taken.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.ReturningDate">
+            <summary>
+            Date when copy must be returned.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.Room">
+            <summary>
+            Room where copy is placed.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.Level">
+            <summary>
+            Level of copy room.
+            </summary>
+        </member>
+        <member name="P:LISY.Entities.Documents.Copy.IsRenewed">
+            <summary>
+            Is copy renewed or not.
+            </summary>
+        </member>
+        <member name="M:LISY.Entities.Documents.Copy.#ctor">
+            <summary>
+            Initializes a new instance of Copy.
+            </summary>
+        </member>
         <member name="F:LISY.Entities.Documents.CopyWithPrice.FINE_PER_DAY">
             <summary>
             Fine per day.
@@ -604,6 +654,13 @@
             <summary>
             Counts fine for user.
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LISY.Entities.Documents.Journal.EvaluateReturnDate(System.String,System.String)">
+            <summary>
+            Evaluates return date of a journal.
+            </summary>
+            <param name="patronType">Type of booking patron.</param>
             <returns></returns>
         </member>
     </members>

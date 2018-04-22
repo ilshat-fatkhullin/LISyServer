@@ -32,7 +32,7 @@ namespace LISY.DataManagers
             {
                 long cardNumber = CredentialsDataManager.AddUserCredentials(login, password);
                 librarian.CardNumber = cardNumber;
-                DatabaseHelper.Execute("dbo.spUsers_AddUser @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Type",
+                DatabaseHelper.Execute("dbo.spLibrarians_AddLibrarian @FirstName, @SecondName, @CardNumber, @Phone, @Address, @Authority",
                         new
                         {
                             FirstName = librarian.FirstName,
@@ -40,7 +40,7 @@ namespace LISY.DataManagers
                             CardNumber = librarian.CardNumber,
                             Phone = librarian.Phone,
                             Address = librarian.Address,
-                            Type = "Librarian"
+                            Authority = librarian.Authority
                         });
             }
             return !isUserInTable;
@@ -159,7 +159,12 @@ namespace LISY.DataManagers
         public static User GetUserById(long userId)
         {
             return DatabaseHelper.Query<User>("dbo.spUsers_GetUserById @Id", new { Id = userId }).FirstOrDefault();
-        }        
+        }
+
+        public static Librarian GetLibrarianById(long userId)
+        {
+            return DatabaseHelper.Query<Librarian>("dbo.spLibrarians_GetLibrarianById @Id", new { Id = userId }).FirstOrDefault();
+        }
 
         public static Patron GetPatronById(long patronId)
         {            
@@ -177,6 +182,14 @@ namespace LISY.DataManagers
             var output = DatabaseHelper.Query<User>("dbo.spUsers_GetAllUsers", null);
             if (output == null)
                 return new User[] { };
+            return output.ToArray();
+        }
+
+        public static Librarian[] GetLibrariansList()
+        {
+            var output = DatabaseHelper.Query<Librarian>("dbo.spLibrarians_GetAllLibrarians", null);
+            if (output == null)
+                return new Librarian[] { };
             return output.ToArray();
         }
 
@@ -232,6 +245,11 @@ namespace LISY.DataManagers
                         PatronId = patronId });
             }
             return fines.ToArray();
+        }
+
+        public static void SetLibrarianAuthority(long librarianId, int authority)
+        {
+            DatabaseHelper.Execute("dbo.spLibrarians_ModifyAuthority @LibrarianId @Authority", new { LibrarianId = librarianId, Authority = authority });
         }
     }
 }

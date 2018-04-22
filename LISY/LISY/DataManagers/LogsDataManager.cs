@@ -11,7 +11,7 @@ namespace LISY.DataManagers
         {
             string log = userType + ' ' + Convert.ToString(id) + ' ' + action;
             DatabaseHelper.Execute("dbo.spLogs_AddLog @Log",
-                        log);
+                        new { Log = log });
         }
 
         public static LogContent[] GetAllLogs()
