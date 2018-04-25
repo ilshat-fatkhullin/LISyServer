@@ -180,7 +180,7 @@ namespace LISY.DataManagers
 
             Takable takable = GetTakableById(documentId);
 
-            string returningDate = takable.EvaluateReturnDate(DateTime.Today.ToShortDateString(), patronType);
+            long returningDate = takable.EvaluateReturnDate(DateManager.GetLong(DateTime.Today), patronType);
 
             long availableCopyId = DatabaseHelper.Query<long>("dbo.spCopies_GetAvailableCopies @BookId, @UserId", new { BookId = documentId, UserId = patronId }).FirstOrDefault();
 
@@ -438,7 +438,7 @@ namespace LISY.DataManagers
             Takable takable = GetTakableById(documentId);
             if (takable.IsOutstanding)
                 return;
-            string returningDate = takable.EvaluateReturnDate(copy.ReturningDate, patronType);
+            long returningDate = takable.EvaluateReturnDate(copy.ReturningDate, patronType);
             DatabaseHelper.Execute("dbo.spCopies_RenewDocument @DocumentId, @PatronId, @ReturningDate", new {
                 DocumentId = documentId,
                 PatronId = patronId,

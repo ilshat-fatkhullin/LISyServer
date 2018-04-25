@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LISY.Helpers;
+using System;
 
 namespace LISY.Entities.Documents
 {
@@ -17,21 +18,11 @@ namespace LISY.Entities.Documents
         /// </summary>
         /// <param name="patronType">Type of booking patron.</param>
         /// <returns></returns>
-        public override string EvaluateReturnDate(string dateString, string patronType)
+        public override long EvaluateReturnDate(long time, string patronType)
         {
-            string[] dateParts = dateString.Split('.');
-            DateTime date = new DateTime(
-                Convert.ToInt32(dateParts[2]),
-                Convert.ToInt32(dateParts[1]),
-                Convert.ToInt32(dateParts[0]));            
-            date = date.AddDays(BASIC_RETURN_TIME); 
+            DateTime date = DateManager.GetDate(time);
             string d = date.ToShortDateString();
-            string[] dArray = d.Split('.');
-            if (dArray[0].Length < 2)
-                dArray[0] = '0' + dArray[0];
-            if (dArray[1].Length < 2)
-                dArray[1] = '0' + dArray[1];
-            return dArray[0] + '.' + dArray[1] + '.' + dArray[2];
+            return DateManager.GetLong(date);
         }
     }
 }

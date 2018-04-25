@@ -28,7 +28,7 @@
         /// <summary>
         /// Date when copy must be returned.
         /// </summary>
-        public string ReturningDate { get; set; }
+        public long ReturningDate { get; set; }
 
         /// <summary>
         /// Room where copy is placed.

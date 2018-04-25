@@ -142,7 +142,7 @@ namespace LISY.DataManagers
 
         public static void EditStudent(Student student)
         {
-            EditStudent(student);
+            EditUser(student);
         }
 
         public static void EditGuest(Guest guest)
@@ -249,7 +249,7 @@ namespace LISY.DataManagers
 
         public static void SetLibrarianAuthority(long librarianId, int authority)
         {
-            DatabaseHelper.Execute("dbo.spLibrarians_ModifyAuthority @LibrarianId @Authority", new { LibrarianId = librarianId, Authority = authority });
+            DatabaseHelper.Execute("dbo.spLibrarians_ModifyAuthority @LibrarianId, @Authority", new { LibrarianId = librarianId, Authority = authority });
         }
     }
 }

@@ -26,8 +26,7 @@ namespace LISY
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-
+            }            
             app.UseMvc();
         }
     }

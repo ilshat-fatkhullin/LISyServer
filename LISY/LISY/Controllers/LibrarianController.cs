@@ -678,12 +678,12 @@ namespace LISY.Controllers
         [Route("set_librarian_authority")]
         [HttpPut]
         public void SetLibrarianAuthority(SetLibrarianAuthorityRequest request)
-        {
+        {            
+            UsersDataManager.SetLibrarianAuthority(request.LibrarianId, request.Authority);
             LogsDataManager.SendLog(
                 1,
                 "Admin",
                 "changed authority of librarian with id " + request.LibrarianId);
-            UsersDataManager.SetLibrarianAuthority(request.LibrarianId, request.Authority);
         }
     }
 }

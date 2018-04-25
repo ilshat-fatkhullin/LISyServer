@@ -204,6 +204,13 @@
             <param name="userId">Given user id</param>
             <returns>User</returns>
         </member>
+        <member name="M:LISY.Controllers.LibrarianController.GetLibrarianById(System.Int64)">
+            <summary>
+            Gets user by given user id
+            </summary>
+            <param name="userId">Given user id</param>
+            <returns>User</returns>
+        </member>
         <member name="M:LISY.Controllers.LibrarianController.GetPatronById(System.Int64)">
             <summary>
             Gets patron by given patron id
@@ -656,7 +663,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:LISY.Entities.Documents.Journal.EvaluateReturnDate(System.String,System.String)">
+        <member name="M:LISY.Entities.Documents.Journal.EvaluateReturnDate(System.Int64,System.String)">
             <summary>
             Evaluates return date of a journal.
             </summary>

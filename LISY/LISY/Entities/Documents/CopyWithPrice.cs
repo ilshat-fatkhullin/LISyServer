@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LISY.Helpers;
+using System;
 
 namespace LISY.Entities.Documents
 {
@@ -18,7 +19,7 @@ namespace LISY.Entities.Documents
         public int CountFine()
         {
             DateTime date = DateTime.Today;
-            DateTime returnDate = DateTime.Parse(ReturningDate);
+            DateTime returnDate = DateManager.GetDate(ReturningDate);
             int days = date.Subtract(returnDate).Days;
             int fine = 0;
             if (days > 0)

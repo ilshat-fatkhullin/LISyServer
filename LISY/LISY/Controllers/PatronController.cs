@@ -3,6 +3,7 @@ using LISY.Entities.Notifications;
 using LISY.Entities.Requests.Patron.Post;
 using LISY.Entities.Requests.Patron.Put;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace LISY.Controllers
 {
@@ -19,13 +20,21 @@ namespace LISY.Controllers
         /// <param name="request">Given request</param>
         [Route("check_out")]
         [HttpPut]
-        public void CheckOutDocument([FromBody]CheckOutDocumentRequest request)
-        {            
-            DocumentsDataManager.CheckOutDocument(request.DocumentId, request.UserId);
-            LogsDataManager.SendLog(
-                request.UserId,
-                "Patron",
-                "checked out document with id " + request.DocumentId);
+        public string CheckOutDocument([FromBody]CheckOutDocumentRequest request)
+        {
+            try
+            {
+                DocumentsDataManager.CheckOutDocument(request.DocumentId, request.UserId);
+                LogsDataManager.SendLog(
+                    request.UserId,
+                    "Patron",
+                    "checked out document with id " + request.DocumentId);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return "OK";
         }
 
         /// <summary>
